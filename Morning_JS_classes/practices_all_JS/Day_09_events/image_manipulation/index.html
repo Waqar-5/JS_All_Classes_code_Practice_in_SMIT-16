@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blobfish Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🐟 Blobfish Playground</h1>
+
+  <!-- Image -->
+  <img src="https://th.bing.com/th/id/OIP.ckC-6T67hBz3XLj1L9qNowHaE7?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" id="ugly" alt="Blobfish" onClick="makeInvisible()">
+
+  <div>
+    <button onclick="makeInvisible()">Make Invisible (className)</button>
+    <button onclick="makeVisible()">Make Visible (className)</button>
+    <button onclick="toggleFish()">Toggle Fish (classList)</button>
+  </div>
+
+  <!-- Paragraph -->
+  <p id="p1" class="verdana">Hover over me to get bigger but keep Verdana!</p>
+
+  <div class="buttons">
+    <button onclick="makeBig()">Make Big (className +=)</button>
+    <button onclick="resetText()">Reset Text</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

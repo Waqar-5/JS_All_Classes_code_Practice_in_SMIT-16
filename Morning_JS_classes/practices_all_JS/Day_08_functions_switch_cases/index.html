@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Task Tracker & Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;}
+        h1 { color: #333; }
+        #taskContainer { margin-top: 20px; }
+        .task { background-color: #fff; padding: 10px; margin: 10px 0; border-radius: 5px; display:flex; justify-content: space-between; align-items:center;}
+        .done { text-decoration: line-through; color: green; }
+        button { padding: 5px 10px; margin-left: 5px; cursor: pointer;}
+        #calculator { margin-top: 30px; }
+        #calcResult { margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Dynamic Task Tracker & Calculator</h1>
+
+    <!-- Task Input -->
+    <input type="text" id="taskInput" placeholder="Add a task">
+    <button id="addTaskBtn">Add Task</button>
+
+    <!-- Task Container -->
+    <div id="taskContainer"></div>
+
+    <!-- Calculator -->
+    <div id="calculator">
+        <h2>Simple Calculator</h2>
+        <input type="number" id="num1" placeholder="Number 1">
+        <input type="number" id="num2" placeholder="Number 2">
+        <button id="calcBtn">Calculate Sum</button>
+        <div id="calcResult"></div>
+    </div>
+
+    <script>
+    // *********************************************************
+    // Project 3: Full JS Function Practice with DOM + CSS
+    // *********************************************************
+
+    console.log("********** Task Tracker + Calculator **********");
+
+    // ========================================================
+    // 1. Named Function
+    // Add a task to container
+    // ========================================================
+    function addTask(taskName) {
+        const taskDiv = document.createElement("div");
+        taskDiv.classList.add("task");
+        taskDiv.innerHTML = `<span>${taskName}</span>`;
+        
+        // ========================================================
+        // 2. Dynamic/Anonymous Method
+        // Add Done & Delete buttons dynamically
+        // ========================================================
+        const doneBtn = document.createElement("button");
+        doneBtn.textContent = "Done";
+        doneBtn.onclick = () => toggleDone(taskDiv); // Arrow + Callback
+
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.onclick = () => deleteTask(taskDiv);
+
+        taskDiv.appendChild(doneBtn);
+        taskDiv.appendChild(delBtn);
+        document.getElementById("taskContainer").appendChild(taskDiv);
+    }
+
+    // ========================================================
+    // 3. Arrow Function
+    // Toggle task done state
+    // ========================================================
+    const toggleDone = (taskDiv) => {
+        taskDiv.firstChild.classList.toggle("done");
+    };
+
+    // ========================================================
+    // 4. Anonymous Function
+    // Delete task
+    // ========================================================
+    const deleteTask = function(taskDiv) {
+        taskDiv.remove();
+    };
+
+    // ========================================================
+    // 5. IIFE
+    // Initialize button click event
+    // ========================================================
+    (function initTaskBtn() {
+        document.getElementById("addTaskBtn").addEventListener("click", function() {
+            const taskInput = document.getElementById("taskInput");
+            if(taskInput.value.trim() !== "") addTask(taskInput.value);
+            taskInput.value = "";
+        });
+    })();
+
+    // ========================================================
+    // 6. Higher-Order Function
+    // Function returning a function to style tasks dynamically
+    // ========================================================
+    function taskStyler(color) {
+        return function(taskDiv) {
+            taskDiv.style.backgroundColor = color;
+        }
+    }
+
+    const styleGreen = taskStyler("lightgreen");
+    const styleYellow = taskStyler("lightyellow");
+
+    // ========================================================
+    // 7. Nested Function
+    // Count tasks inside a container
+    // ========================================================
+    function countTasks() {
+        function total() {
+            return document.getElementById("taskContainer").children.length;
+        }
+        console.log("Total Tasks:", total());
+    }
+
+    // ========================================================
+    // 8. Recursive Function
+    // Display task list recursively
+    // ========================================================
+    function showTasksRecursive(tasks, index = 0) {
+        if(index >= tasks.length) return;
+        console.log("Task:", tasks[index].firstChild.textContent);
+        showTasksRecursive(tasks, index + 1);
+    }
+
+    // ========================================================
+    // 9. Generator Function
+    // Iterate tasks one by one
+    // ========================================================
+    function* taskGenerator() {
+        const tasks = document.getElementById("taskContainer").children;
+        for(let task of tasks) yield task;
+    }
+
+    // ========================================================
+    // 10. Async Function
+    // Simulate saving tasks online
+    // ========================================================
+    async function saveTasksOnline() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                console.log("Tasks saved online!");
+                resolve(true);
+            }, 1000);
+        });
+    }
+
+    // ========================================================
+    // 11. Calculator - Named + Return + Parameters + Arrow
+    // ========================================================
+    const calculateSum = (a, b) => {
+        return a + b;
+    };
+
+    document.getElementById("calcBtn").addEventListener("click", function() {
+        const num1 = Number(document.getElementById("num1").value);
+        const num2 = Number(document.getElementById("num2").value);
+        const sum = calculateSum(num1, num2); // using return
+        document.getElementById("calcResult").textContent = "Sum: " + sum;
+    });
+
+    // ========================================================
+    // 12. Constructor Function + Dynamic Method
+    // ========================================================
+    function Task(title) {
+        this.title = title;
+        this.showTitle = function() {
+            console.log("Task Title: " + this.title);
+        };
+    }
+
+    Task.prototype.changeColor = function(color) {
+        console.log(`Changing task "${this.title}" color to ${color}`);
+    }
+
+    // ========================================================
+    // 13. Using everything together
+    // ========================================================
+    setTimeout(async () => {
+        const allTasks = document.getElementById("taskContainer").children;
+        showTasksRecursive(allTasks); // recursion
+        const gen = taskGenerator();
+        console.log("Generator first task:", gen.next().value?.firstChild.textContent);
+        countTasks(); // nested
+        await saveTasksOnline(); // async
+        if(allTasks.length > 0) styleYellow(allTasks[0]); // higher-order + dynamic styling
+    }, 3000);
+
+    </script>
+</body>
+</html>

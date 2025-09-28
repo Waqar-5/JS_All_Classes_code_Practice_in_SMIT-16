@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Form Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Smart Form Project</h2>
+
+  <form onsubmit="return validateForm();">
+    <label>Email:</label>
+    <input type="text" id="email" placeholder="Enter your email">
+    <div id="emailError" class="error">Email address is required!</div>
+
+    <label>ZIP Code:</label>
+    <input type="text" id="zip" placeholder="Enter ZIP code" onblur="fillCity();">
+
+    <label>City:</label>
+    <input type="text" id="city" placeholder="City will autofill">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  
+
+</body>
+<script src="app.js"></script>
+</html>

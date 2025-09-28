@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Storybook Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Interactive Storybook</h1>
+
+  <!-- Paragraphs -->
+  <div id="story">
+    <p>This bed is too small.</p>
+    <p>This bed is too big.</p>
+    <p>This bed is just right.</p>
+  </div>
+
+  <!-- Images -->
+  <div id="gallery">
+    <img src="https://th.bing.com/th/id/R.cef4c7e3681272526d372763db92166c?rik=phfE0PUirQsj5A&pid=ImgRaw&r=0" alt="Small Bed">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.X4XxvqYxsq5TAfWelPmJ2QHaEK?pid=ImgDet&w=474&h=266&rs=1&o=7&rm=3" alt="Big Bed">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.epbOflvP-DtyIItpXcb1mAHaEo?pid=ImgDet&w=474&h=296&rs=1&o=7&rm=3" alt="Just Right Bed">
+  </div>
+
+  <!-- Div section -->
+  <div id="highlight">I am a special story section.</div>
+
+  <!-- Unordered list -->
+  <h3>Things Goldilocks tried:</h3>
+  <ul id="tries">
+    <li>Small bed</li>
+    <li>Big bed</li>
+    <li>Just right bed</li>
+  </ul>
+
+  <!-- Buttons -->
+  <div class="controls">
+    <button onclick="doubleTextSize()">Double Text Size</button>
+    <button onclick="changeFont()">Change Font</button>
+    <button onclick="rewriteStory()">Rewrite Story</button>
+    <button onclick="highlightDiv()">Highlight Section</button>
+    <button onclick="addNewTry()">Add New Try</button>
+    <button onclick="changeImages()">Change Images</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

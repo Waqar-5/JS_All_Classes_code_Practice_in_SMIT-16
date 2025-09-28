@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.5s;
+}
+
+.container {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: background 0.5s;
+}
+
+.input-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ff6b6b;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #ff4757;
+}
+
+.output {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.5s, color 0.5s;
+}

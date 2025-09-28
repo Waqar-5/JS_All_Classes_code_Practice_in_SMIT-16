@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Weekly Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Smart Weekly Planner</h1>
+
+        <div class="input-group">
+            <label for="dayInput">Enter Day:</label>
+            <input type="text" id="dayInput" placeholder="e.g., Monday">
+        </div>
+
+        <div class="input-group">
+            <label for="userType">User Type:</label>
+            <select id="userType">
+                <option value="student">Student</option>
+                <option value="worker">Worker</option>
+            </select>
+        </div>
+
+        <button onclick="planDay()">Check Plan ✅</button>
+
+        <div id="output" class="output"></div>
+    </div>
+
+    <script src="./smart_weekly_planner_dynamic.js"></script>
+</body>
+</html>

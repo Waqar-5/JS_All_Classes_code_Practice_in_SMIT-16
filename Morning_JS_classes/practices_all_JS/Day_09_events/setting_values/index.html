@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slow Loris Info Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🐒 Slow Loris Info Explorer</h1>
+
+        <!-- Paragraphs with expandable content -->
+
+        <p id="slowLoris">
+             Slow lorises are a group of several species of strepsirrhine primates which make up the genus Nycticebus.
+      <a href="javascript:void(0);" onclick="expandLoris()"><em>Click for more.</em></a>
+        </p>
+
+            <!-- Buttons to load list and peek at content -->
+
+        <div class="buttons">
+            <button onclick="placeAList()">Show Loris Types</button>
+            <button onclick="peekAtContent()">🔍 Peek at Content</button>
+            <button onclick="resetContent()">🔄 Reset Paragraph</button>
+        </div>
+
+          <!-- Div for dynamic list -->
+    <div id="lorisList" class="list-box"></div>
+
+    <!-- Area to show peeked content -->
+    <div id="peekBox" class="peek-box"></div>
+  </div>
+
+
+
+    </div>
+
+</body>
+<script src="app.js"></script>
+</html>

@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#title {
+  color: darkblue;
+}
+
+#p1 {
+  font-size: 1em;
+  border: 2px solid #444;
+  padding: 10px;
+  margin: 20px;
+}
+
+.big {
+  font-size: 2em;
+  color: crimson;
+  font-weight: bold;
+}
+
+#mainPic {
+  border: 5px solid black;
+  margin: 10px;
+}

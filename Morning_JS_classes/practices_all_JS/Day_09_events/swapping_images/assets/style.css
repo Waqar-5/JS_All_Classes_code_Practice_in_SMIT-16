@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+
+.mainDiv{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+.box {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+}

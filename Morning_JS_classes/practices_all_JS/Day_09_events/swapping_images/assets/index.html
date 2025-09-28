@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Swapping Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🎨 Image Swapping Playground</h1>
+  <p>Hover over the images below to see different swapping techniques in action!</p>
+
+<div class="mainDiv">
+    <!-- 1. Inline Swap -->
+  <div class="box">
+    <h2>1️⃣ Inline Swap</h2>
+    <img src="images/before1.jpg" 
+         onmouseover="src='images/after1.jpg'" 
+         onmouseout="src='images/before1.jpg'">
+    <p>(Not recommended, but good to understand)</p>
+  </div>
+
+  <!-- 2. Function-Based Swap -->
+  <div class="box">
+    <h2>2️⃣ Function-Based Swap</h2>
+    <img src="images/before2.webp" id="pic2"
+         onmouseover="swapPic2();" onmouseout="resetPic2();">
+    <p>(Cleaner, but only works for this one image)</p>
+  </div>
+
+  <!-- 3. General-Purpose Swap -->
+  <div class="box">
+    <h2>3️⃣ General-Purpose Swap</h2>
+    <img src="images/after3.webp" id="pic3"
+         onmouseover="swapPic('pic3','images/after3.webp')" 
+         onmouseout="swapPic('pic3','images/before3.webp')">
+    <p>(Reusable for multiple images 🎉)</p>
+  </div>
+
+  <!-- 4. Best Practice (addEventListener) -->
+  <div class="box">
+    <h2>4️⃣ Best Practice with addEventListener</h2>
+    <img src="images/before2.webp" id="pic4">
+    <p>(Modern way: JS handles events separately 👍)</p>
+  </div>
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

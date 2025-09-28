@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StylePlayground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="title">🎨 Style Playground</h1>
+
+  <p id="p1">This is a demo paragraph. Click buttons below to style me!</p>
+
+  <div id="buttonPanel">
+    <button onclick="makeBigClass()">Make Big (Class)</button>
+    <button onclick="makeBigStyle()">Make Big (Style)</button>
+    <button onclick="toggleVisibility()">Toggle Visibility</button>
+    <button onclick="toggleDisplay()">Toggle Display</button>
+    <button onclick="floatImage()">Float Image Left</button>
+    <button onclick="addMargin()">Add Margins</button>
+    <button onclick="showComputed()">Show Computed Styles</button>
+  </div>
+
+  <div id="output"></div>
+
+  <img id="mainPic" width="500px" src="https://th.bing.com/th/id/R.e24bbf467b3fc7ca26f6676079d5871c?rik=arXueq%2byK5%2bfhA&pid=ImgRaw&r=0" alt="Kitten">
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Smart Login Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Smart Login Form</h1>
+
+        <!-- email -->
+         <label>Email:</label>
+         <input type="text" id="email" placeholder="Enter your email">
+         
+         <!-- Password -->
+         <label>Password:</label>
+         <input type="password" id="password" placeholder="Enter your email">
+
+
+           <!-- Tooltip Image -->
+        <h3>Need Help?</h3>
+        <img src="assets/help.png" id="helpIcon" alt="Help">
+
+        <!-- Submit Button -->
+        <button onclick="validateForm()">Login</button>
+
+        <!-- Help Link -->
+    <p>
+      <a href="javascript:void(0)" onclick="showHelp()">Forgot password?</a>
+    </p>
+    </div>
+
+
+</body>
+<script src="app.js"></script>
+</html>
