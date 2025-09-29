@@ -1,0 +1,91 @@
+I need reload.
+Fetch data from server to update our page.
+
+Use case of JS.
+Form validation.
+Dom manipulation: dynamically update element of websites means show or hide popins.
+AJAX/Frtch API: fetch data from srver without reloading page. (Like search suggestion.)
+Creating interactive UI components: 
+Image sliders.
+Popups/modals
+Tab/ dropdowns
+Live search filter.
+
+
+Frontend always on js.
+Framwork of js
+React js, Angular, Vue.js
+Backend:
+Data process
+Handling backend:
+PHP, ruby, Python
+(Node.js) now
+
+Full stack
+Both humandled by one fronted and backend.
+
+MERN: is full stack.
+Mongodb, express.js, react.js and node.js:
+
+History:
+Js made in 1995 by bardin eich within  10 days in netscape company. 
+MS launched in windows explore(browser) in 1996.
+
+
+ECAMA script came in 1997. Became standard.
+
+2009 ecama es5 came.
+2015 es6 came.
+JS is on top of the level.
+Java is complied.
+JS is interpreted.
+
+
+Summary:
+JS is heart of modern web.
+It will  run on browser(fronted) and server(backend= node.js) too.
+Powerf due to modern ES6+ features.
+
+(; terminator applied.)
+Logs?
+
+Varibale is a contaimer or box which stores or saves data temporarily.
+Varible gets save in container and container  reserved specific location by giving name in RAM, location contains data.
+Varible declaration:
+Using key words for declaration of variables.
+Var, let and const.
+Var 
+
+Two steps to run js code
+1. Memory allocation (creation phase)
+2. Code execution
+
+1. Firat js scan variable.
+Var ko Undefine assign Karta
+Deta hai.
+Load function completely  in memory.
+2.
+Get assign actual values..
+Executed  top to bottom code.
+
+Hoisting:. 
+Var variables  are hoist in JS.
+Scopes of varibles: after function.
+Let and const came in es6.
+
+Redelare and reassign.
+
+
+Rules of naming to variables.
+Valid:
+camelCase(userName) fronted
+Snake_case(user_name) in both
+PascalCase(UserName) backed
+$ only this special character is used.
+
+
+Invalid:
+Not use
+Numbers, 
+Special signs
+Reserved words(let, return.)l

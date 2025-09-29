@@ -1,0 +1,330 @@
+Array
+Memory less and storage more 
+Square bracket is symbol is the array.
+A colection of same data in other language..
+But jS says that just provide any data.
+
+In array, index starts from  o...
+
+
+6 basic methods in array.
+Push(used to add element at the end of array)
+Push("Ahmed")
+Pop(used to remove last element from array)
+Pop()
+unshift(used to add element in beginning or first in array)
+Unshift("Khan")
+
+Shift(Used to remove first element from array)
+Shift()
+
+Splice(used to remove or add  specific from array)
+Splice(start number/index, removed or delete count number, element to be inserted => "Khan")
+
+Slice(it will return copy of section of array)
+slice(starting index, )
+
+
+Index atarta from 0.
+Length starts frim 1.
+After using slice method, the original array remains same.
+If the value is not provided to the slice method, it consider it as  (0) start index..
+If we provide only one. Alue to slice method, it copies the element from that index, to the lat element.
+
+If we provide ending index, it will consider it as n - 1: arr.slice (3,6)=> 3,4,5.
+
+3, 5- it will copies from 3 to 4 not 5.
+It copies the array(slice).
+{} means block scope..
+
+Loops.
+Three basic loops.. In js.
+for loop
+while loop
+do while loop
+
+Variable declaration.
+var a;
+Variable initialization 
+var a = 10; 
+For loop: syntax
+for(3 works= 
+1.variable initialization.
+var a = 0;
+2. Condition checking
+a < 5;
+3. Increamt / decrement
+a++
+)
+{
+document.write("hello world!")
+}
+
+
+Flow of for loop.
+1.flow
+Initialization 
+Condition checking.
+Block acrope run
+Increment.
+
+2.flow
+Codition checking.
+Block scrope runs.
+Increment.
+
+
+3.flow
+Codition checking.
+Block scrope runs.
+Increment
+
+
+4.flow
+Codition checking.
+Block scrope runs.
+Increment
+
+
+Condition checking flase, it will come out from block scope. 
+5.flow
+Codition checking.
+Block scrope runs.
+Increment.
+
+
+
+// var arr = ["Bilal", "Maaz", "Arshad", "Mujeeb", "Hadi", "Suleman"]; // arr initialization
+// index starts from 0, total index ==> 3
+// length starts from 1, total length ==> 4
+
+// arr.push("Atta ur Rehman")
+// arr.push("Shahzaib")
+
+// document.write("Array starting: ",arr)
+
+// arr.pop()
+// arr.pop()
+
+// document.write('</br>After using pop method: ' + arr)
+
+// arr.unshift(123, 345, 5678)
+
+// document.write("</br>After using unshift method: " + arr)
+
+// arr.shift()
+
+// document.write("</br>After using shift method: " + arr)
+
+// arr.splice(2, 1, "Hunain", "Saim")
+
+// document.write("</br>After using splice method: " + arr)
+
+// var arr2 = arr.slice(3, 6);
+// if the value is not provided to the slice method, it considers it as 0 (starting index): arr.slice()
+
+// if we provide only one value to slice method, it copies the element from that index, to the last element: arr.slice(3)
+
+// if we provide the ending index, it will consider it as n - 1: arr.slice(3, 6) ==> 3, 4, 5
+
+// after using slice the orignal array remains the same
+
+// document.write("</br>Arr2: " + arr2);
+// document.write("</br>Arr(Orignal Array): " + arr)
+
+// document.write("Hello World!")
+
+// 3 basic loops are in JS
+// for loop
+// while loop
+// do while loop
+
+// for loop
+// variable initialization
+// condition checking
+// increment/decrement
+
+// if () {
+
+// }
+
+// var a; // variable declaration
+
+// var a = 1; // variable initialization
+
+// initialization
+// condition checking
+// block scope
+// increment
+
+// condition checking
+// block scope
+// increment
+
+// condition checking
+// block scope
+// increment
+
+// codition checking (false)
+
+// for (a; a < 5; a++) {
+//   document.write("</br>" + a + "Hello World!") // 0Hello World
+//   // 1Hello World
+//   // 2Hello World
+//   // 3Hello World
+//   // 4Hello World
+// }
+
+// var a = 5
+
+// for (a; a >= 1; a--) {
+//   document.write("</br>" + a + ") Hello world!")
+// }
+
+var table = 2;
+// 2 x 1 = 2
+// document.write(table + " x " + multiple + " = " + result)
+
+for (var multiple = 1; multiple <= 10; multiple++) {
+
+  var result = table * multiple;
+
+  document.write("</br>" + table + " x " + multiple + " = " + result)
+}
+
+
+Class 6..
+
+When we write document.write(arr)  arr will consider as string... Here..
+
+Flag variable..(indicator)
+Assignment:
+1. 1 to 10
+2. 11 to 20
+3. 21 to 30
+Solution of above assignment.
+i = 0;
+(
+For one iteration
+i remain 0
+j = 1, 2,...10
+res = 0 * 10 + 1 = 1, 2,3,4...10
+Print 1. , 2,3..10
+)
+2nd iterion 
+i = 1;
+J = 1
+Res = 1* 10 + 1 = 11
+
+
+Methods of array.
+Indexof
+arr.ondexof("ahmed")= show its index
+If we have two ahmed then it will provide first one. To solve this do
+arr.indexof("ahmed", 1) if another presnet so provide after that index where one is present..
+If the element is not present in array, the indexof method returns -1...
+
+Arr.lastIndexOf() it stars from last 0..
+
+
+
+
+
+
+
+
+Array(primitive data type)
+Array i used to store collection  of  different  data using square. Brackets...(array bracke[])
+Index wise it runs..
+Index start from 0.
+Its formula length - 1  = index...
+Adding element in array..
+gruit[5] = "grapes"
+
+Array mostly used for list, one type data,  in loops...99%..
+
+Methods of array...
+Method = function of object or doing action.., takes parentheses.
+Property of array = length, it ia vlue or information of object...
+
+Methods of array...
+
+.push is used to add element in the end of array.
+
+.pop is used to remove last element... From array..
+
+.unshift is usedto add element in first or at the start..
+
+.shift is used remove element from start from array..
+
+.slice is used to return copy of array, takes two values  starting and ending value.
+
+
+.splice() is used to insert , remove, add (starti g number, deletions, adding).
+Takes three values means numbers..
+
+We can modified our array by using splice. 
+We can put negative value in slice.
+
+
+Space is coounted in Js.
+Can we used string as array ..
+
+.to upper case()
+.to lowercase()
+Both for string also..
+
+Arrays are store in ram/memory by reference  not value...
+
+Arrar == Array not equal because of their reference is changed...
+
+String method. 
+substring() is used like slice but dont use negative value.. But we swap values..
+
+
+Loops...
+Types of loops in js.
+their syntax
+For(init ; condition ; incre/decr){
+Block of code
+}
+
+Why used array.length in loops used...
+
+
+
+
+Class 7.
+C and C++ are high level language but they have little frature of showing low level language...
+Assembly languages are low level languages..
+
+Array is special  variable.
+Index formula = length - 1.
+Adding elements.
+Push. Ending
+Unshift starting
+
+No value provide in parenthesis.
+Removing elements
+Pop(). End remove
+Shift(). Start remove.
+
+Length counts tolal elements .
+
+It will start fron indexing.
+Slice gets copy if original array.
+Takes two value, start and end..
+
+Modify (splice).
+Takes three values, 
+Start and deletion count.., adding value..
+Adding value will be added on start value place...
+
+Loop
+For loop.
+
+
+Nested loop..
+2D array... => One array contain more than one array...
+Flag concept in loop..
+Flag is a varibale which tell conditions true or false.
