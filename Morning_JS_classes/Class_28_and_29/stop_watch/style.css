@@ -1,0 +1,74 @@
+/* 🌈 General Page Styling */
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a72);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 🧭 Container Styling */
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 🕒 Stopwatch Display */
+#display {
+  font-size: 4rem;
+  margin: 20px 0;
+  letter-spacing: 3px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 50px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+/* 🎛 Buttons Section */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 🔘 Buttons */
+button {
+  font-size: 1.2rem;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* 🌟 Individual Button Colors */
+#start {
+  background-color: #4caf50;
+}
+
+#stop {
+  background-color: #f44336;
+}
+
+#reset {
+  background-color: #2196f3;
+}
+
+/* ✨ Hover Effects */
+button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* 🌙 Optional: subtle glow animation */
+button:active {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
