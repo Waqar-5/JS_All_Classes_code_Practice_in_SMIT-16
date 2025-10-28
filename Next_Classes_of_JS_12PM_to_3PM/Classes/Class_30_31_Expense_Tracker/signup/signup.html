@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sign Up</title>
+    <!-- Link to Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    
+    <div class="signup-div">
+        <h1>CUSTOMER SIGN UP</h1>
+
+        <div class="inp-fields">
+            
+            <!-- Email Input -->
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="semail" placeholder="Enter Your Email">
+            </div>
+            
+            <!-- Password Input -->
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="spassword" placeholder="Create Password">
+            </div>
+            
+            <!-- Confirm Password Input (Crucial for Sign Up) -->
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="sconfirmPassword" placeholder="Confirm Password">
+            </div>
+
+        </div>
+
+        <div class="btn-div">
+            <button id="signBtn">SIGN UP</button>
+            <a href="../login/login.html">LOGIN</a> <!-- Changed link text to uppercase for consistency -->
+        </div>
+
+    </div>
+</body>
+<script src="signup.js"></script>
+</html>

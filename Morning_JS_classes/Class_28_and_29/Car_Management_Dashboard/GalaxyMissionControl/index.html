@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galaxy Mission Control — Interstellar Vehicle Architect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🚀</div>
+      <div>
+        <h1>Galaxy Mission Control</h1>
+        <p class="muted">Interstellar Vehicle Architect — JS Objects Showcase</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="btnNewShip">+ New Spaceship</button>
+      <button id="btnExport">Export JSON</button>
+      <button id="btnReset">Reset Demo</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="left">
+      <div class="panel">
+        <h2>Create / Edit Ship</h2>
+        <form id="shipForm">
+          <input type="hidden" id="shipKey" />
+          <label>Ship Key (id): <input id="shipId" placeholder="ship1" required /></label>
+          <label>Brand (dot notation demo): <input id="brand" placeholder="NebulaWorks" required /></label>
+          <label>Model (bracket notation demo): <input id="model" placeholder="NX-200" required /></label>
+          <label>Year: <input id="year" type="number" placeholder="2077" /></label>
+          <label>Primary Fuel: <input id="fuel" placeholder="Antimatter" /></label>
+          <label>Color: <input id="color" placeholder="Midnight Blue" /></label>
+
+          <fieldset>
+            <legend>Pilot (nested object)</legend>
+            <label>Pilot Name: <input id="pilotName" placeholder="Captain Zara" /></label>
+            <label>Pilot Rank: <input id="pilotRank" placeholder="Commander" /></label>
+          </fieldset>
+
+          <div class="form-row">
+            <button type="submit" class="primary">Save Ship</button>
+            <button type="button" id="btnCancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel small">
+        <h3>Quick Actions (Assignments)</h3>
+        <div class="grid">
+          <button id="btnAddProp">Add Property (dynamic)</button>
+          <button id="btnDeleteProp">Delete Property</button>
+          <button id="btnShowDotBracket">Show dot & bracket demo</button>
+          <button id="btnCountProps">Count Properties</button>
+          <button id="btnKeysArray">Keys → Array</button>
+          <button id="btnManualCopy">Manual Copy</button>
+          <button id="btnCheckIn">Check 'in' operator</button>
+          <button id="btnLoop">Show for...in output</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="panel">
+        <h2>Spaceship Hangar</h2>
+        <div id="hangar" class="hangar"></div>
+      </div>
+
+      <div class="panel small">
+        <h3>Output</h3>
+        <pre id="output">Welcome to Galaxy Mission Control — interact with UI to see results.</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Built by <strong>Waqar Ali</strong> • Objects, Nested Objects, Methods, Loops, Copy, Delete, Keys Array, Count</div>
+    <div class="small muted">Show this to clients & explain each card — it demonstrates real object thinking.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

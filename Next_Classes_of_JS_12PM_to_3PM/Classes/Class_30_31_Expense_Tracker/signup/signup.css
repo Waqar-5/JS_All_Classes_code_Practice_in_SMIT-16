@@ -1,0 +1,128 @@
+/* 1. Basic Setup & Centering */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; 
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Sign Up Container Styling (The White Phone Shape) */
+.signup-div {
+    width: 300px; 
+    /* INCREASED HEIGHT HERE: Increased vertical padding from 30px/40px to 50px/60px */
+    padding: 50px 20px 60px 20px; 
+    background-color: white;
+    border-radius: 40px; /* Highly rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. Header Styling: The 'CUSTOMER SIGN UP' Pill */
+.signup-div h1 {
+    background-color: #ff69b4; /* Bright Pink */
+    color: white;
+    padding: 8px 30px;
+    border-radius: 20px; 
+    font-size: 14px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0; 
+    /* Increased margin below the header */
+    margin-bottom: 50px; 
+    box-shadow: 0 2px 5px rgba(255, 105, 180, 0.5); 
+}
+
+/* 4. Input Fields */
+.inp-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* INCREASED HEIGHT HERE: Increased space between inputs from 30px to 40px */
+    gap: 40px; 
+    margin-bottom: 50px; /* Increased space before the button area */
+}
+
+/* Grouping the Icon and Input */
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 5px;
+}
+
+.input-group i {
+    color: #a0a0a0; 
+    font-size: 16px;
+    margin-right: 10px; 
+}
+
+.inp-fields input {
+    flex-grow: 1;
+    border: none;
+    padding: 5px 0;
+    font-size: 16px;
+    outline: none; 
+    box-sizing: border-box; 
+    color: #333;
+    padding-left: 5px; 
+}
+
+.inp-fields input:focus {
+    border-bottom-color: #ff69b4; 
+}
+
+.inp-fields input::placeholder {
+    color: #a0a0a0;
+}
+
+
+/* 5. Button and Link Area Styling */
+.btn-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 15px;
+}
+
+/* Sign Up Button (Pink Pill) */
+#signBtn {
+    width: 100%;
+    background-color: #ff69b4; 
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 25px; 
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); 
+    transition: background-color 0.3s;
+}
+
+#signBtn:hover {
+    background-color: #e05e9e; 
+}
+
+/* Login Link */
+.btn-div a {
+    display: block; 
+    text-align: center;
+    text-decoration: none;
+    color: #a0a0a0; 
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.btn-div a:hover {
+    color: #ff69b4;
+    text-decoration: underline;
+}

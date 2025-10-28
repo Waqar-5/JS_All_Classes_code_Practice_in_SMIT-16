@@ -1,0 +1,189 @@
+/* 1. Basic Setup & Centering (The Outer "Screen") */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* width: auto; */
+    margin: 0;
+    background-color: #f0f0f0; /* Light grey background */
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Login Container Styling (The White Phone Shape) */
+.login-div {
+    width: 300px; /* Specific width */
+    padding: 30px 20px 40px 20px;
+    background-color: white;
+    border-radius: 40px; /* Highly rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. Header Styling: The 'CUSTOMER LOGIN' Pill */
+.login-div h1 {
+    background-color: #ff69b4; /* Bright Pink */
+    color: white;
+    padding: 8px 30px;
+    border-radius: 20px; 
+    font-size: 14px; /* Matches the small text size in the pill */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0; 
+    margin-bottom: 40px;
+    /* Adding subtle gradient/shadow to match the image texture */
+    box-shadow: 0 2px 5px rgba(255, 105, 180, 0.5); 
+}
+
+/* 4. Input Fields (The core section) */
+.inp-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between Username and Password groups */
+    margin-bottom: 30px;
+}
+
+/* Grouping the Icon and Input */
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #ccc; /* The separator line */
+    padding-bottom: 5px;
+}
+
+.input-group i {
+    color: #a0a0a0; /* Grey icon color */
+    font-size: 16px;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.inp-fields input {
+    flex-grow: 1;
+    border: none;
+    padding: 5px 0;
+    font-size: 16px;
+    outline: none; 
+    box-sizing: border-box; 
+    color: #333;
+}
+
+.inp-fields input::placeholder {
+    color: #a0a0a0; /* Placeholder text color */
+}
+
+/* 5. Options Row: Remember Me / Forgot Password */
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-top: 10px; /* Space from the input field above */
+}
+
+.forgot-password {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+/* Custom Checkbox Styling to Match the Image */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 18px; /* Space for the custom box */
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 10px; /* Smaller box */
+    width: 10px; /* Smaller box */
+    background-color: white;
+    border: 1px solid #a0a0a0;
+    border-radius: 2px;
+}
+
+/* Checkmark (The tick mark itself) */
+.checkbox-container input:checked ~ .checkmark:after {
+    content: "\f00c"; /* Font Awesome 'check' icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    color: white;
+    font-size: 8px; 
+    left: 1px;
+    top: 0;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #ff69b4; /* Pink background when checked */
+    border: 1px solid #ff69b4;
+}
+
+/* 6. Login Button (Pink Pill) */
+.btn-div {
+    width: 100%;
+    margin-top: 40px;
+    height: auto;
+}
+
+#loginBtn {
+    width: 100%;
+    height: auto;
+    background-color: #ff69b4; 
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 25px; 
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); 
+    transition: background-color 0.3s;
+}
+
+
+#loginBtn:hover {
+    background-color: #e05e9e;
+}
+
+/* Styling the Signup link (a) to look exactly like the pink button */
+.btn-div a {
+    /* FIX: Anchor tags are inline, so we must change the display to apply width, padding, etc. */
+    display: block; 
+    text-align: center; /* Center the text inside the new block */
+    text-decoration: none; /* Remove the default underline */
+
+    /* Button Styling */
+    width: 100%;
+    background-color: #ff69b4; 
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 25px; 
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); 
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
