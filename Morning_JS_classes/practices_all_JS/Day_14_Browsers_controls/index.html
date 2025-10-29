@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Mirror 😎</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>🪞 Mood Mirror</h1>
+    <p>Let your browser read your vibe...</p>
+
+    <div class="info">
+      <p><strong>Time:</strong> <span id="time"></span></p>
+      <p><strong>Battery:</strong> <span id="battery"></span></p>
+      <p><strong>Network:</strong> <span id="status"></span></p>
+      <p><strong>Screen:</strong> <span id="screen"></span></p>
+      <p><strong>Browser:</strong> <span id="browser"></span></p>
+    </div>
+
+    <div class="mood-card" id="moodCard">
+      <h2 id="moodText">Analyzing your vibe...</h2>
+    </div>
+
+    <button onclick="refreshMood()">🔄 Refresh Mood</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

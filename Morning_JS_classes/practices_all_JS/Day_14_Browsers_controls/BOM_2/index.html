@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⏳ Time Traveler Browser</title>
+  <style>
+    body {
+      background: radial-gradient(circle, #0a0a2a, #000);
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 40px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-shadow: 0 0 15px #00ffcc;
+    }
+
+    .portal {
+      border: 3px solid #00ffcc;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      margin: 40px auto;
+      position: relative;
+      overflow: hidden;
+      animation: spin 8s linear infinite, glow 2s ease-in-out infinite alternate;
+    }
+
+    /* 💫 Spinning Glow Animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 30px #00ffcc; }
+      50% { box-shadow: 0 0 80px #00ffcc; }
+    }
+
+    /* 🧑 Traveler Image */
+    .portal img.traveler {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      opacity: 0.85;
+      filter: brightness(1.3) contrast(1.2);
+      transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+    }
+
+    .portal:hover img.traveler {
+      transform: scale(1.05);
+      opacity: 1;
+      filter: brightness(1.5) saturate(1.3);
+    }
+
+    h2, p {
+      color: #00ffee;
+    }
+
+    button {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffcc;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #00ffee;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌀 Time Traveler Browser ⏳</h1>
+
+  <!-- 🔮 Portal with your image inside -->
+  <div class="portal">
+    <img src="../3d-cartoon-character.jpg" alt="Time Traveler" class="traveler">
+  </div>
+
+  <h2 id="time"></h2>
+  <p id="message"></p>
+
+  <button onclick="travelBack()">⏪ Past</button>
+  <button onclick="travelForward()">⏩ Future</button>
+
+  <script>
+    const timeDisplay = document.getElementById("time");
+    const msg = document.getElementById("message");
+
+    // 🗣️ Speak + Show Message
+    function announce(text) {
+      const voice = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(voice);
+      msg.textContent = text;
+    }
+
+    // 🕰️ Update Time + Save Visit
+    function updateTime() {
+      const now = new Date();
+      timeDisplay.textContent = now.toLocaleString();
+      localStorage.setItem("lastVisit", now.toLocaleString());
+    }
+
+    // ⏪ Go Back in History
+    function travelBack() {
+      history.back();
+      announce("Traveling to your past timeline...");
+    }
+
+    // ⏩ Go Forward in History
+    function travelForward() {
+      history.forward();
+      announce("Jumping ahead in your timeline...");
+    }
+
+    // 🔄 Restore Previous Visit
+    const last = localStorage.getItem("lastVisit");
+    if (last) announce(`Welcome back, Time Traveler! Your last arrival was ${last}.`);
+    else announce("Initializing time portal...");
+
+    // ⏰ Real-time clock update
+    setInterval(updateTime, 1000);
+
+    // 🔋 Battery Status (Energy Level)
+    if ('getBattery' in navigator) {
+      navigator.getBattery().then(battery => {
+        announce(`Energy level at ${Math.round(battery.level * 100)} percent.`);
+      });
+    } else {
+      announce("Energy module not available on this device.");
+    }
+  </script>
+</body>
+</html>

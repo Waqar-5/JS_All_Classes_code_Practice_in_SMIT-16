@@ -1,0 +1,48 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+}
+
+button {
+  background-color: #ffb100;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ffd54f;
+}
+
+#soulMessage {
+  margin-top: 20px;
+  font-size: 1.2em;
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#statusBox {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
