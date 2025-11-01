@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #e7b6b6;
+    font-family: Arial, sans-serif;
+    color: #141313;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+.main{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; */
+    text-align: center;
+
+}
+
+h1{
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 5rem;
+    text-align: center;
+}
+
+h2 {
+    display: inline-block;      /* Makes it shrink to content like a button */
+    margin: 60px auto 0 auto;   /* Center horizontally */
+    font-size: 2rem;            /* Adjust size as needed */
+    padding: 15px 30px;         /* Button-like padding */
+    background: #444;           /* Background color */
+    color: #fff;                /* Text color */
+    border-radius: 10px;        /* Rounded corners */
+    text-align: center;         /* Center text inside */
+    cursor: pointer;            /* Shows pointer on hover */
+    transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+h2:hover {
+    background: #666;           /* Slightly lighter on hover */
+}
+
+
+
+
+#var {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    background: #f0f4f8; /* soft background */
+    color: #333;          /* text color */
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;     /* space between lines */
+    border-left: 5px solid #007BFF; /* left colored bar */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    white-space: pre-line; /* preserves line breaks */
+}
+#var::before {
+    content: "Key Points about var:";
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 3rem;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+
+#let {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    background: #f0f4f8; /* soft background */
+    color: #333;          /* text color */
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;     /* space between lines */
+    border-left: 5px solid #007BFF; /* left colored bar */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    white-space: pre-line; /* preserves line breaks */
+}
+#let::before {
+    content: "Key Points about let:";
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+#const{
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+
+
+#const {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    background: #f0f4f8; /* soft background */
+    color: #333;          /* text color */
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;     /* space between lines */
+    border-left: 5px solid #007BFF; /* left colored bar */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    white-space: pre-line; /* preserves line breaks */
+}
+#const::before {
+    content: "Key Points about const:";
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+    .main{
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+

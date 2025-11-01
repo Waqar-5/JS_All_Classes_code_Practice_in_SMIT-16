@@ -1,0 +1,74 @@
+ *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(132, 132, 228);
+    padding: 100px;
+}
+
+
+
+.bomDiv{
+    background: blanchedalmond;
+    color: black;
+    padding: 50px;
+    margin:  o auto;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: burlywood;
+    padding: 50px;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* cursor: pointer; */
+}
+
+
+
+button {
+    padding: 10px 20px;
+    color: white;
+    background: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#context {
+    margin: 20px auto;          /* Center with vertical spacing */
+    font-size: 1rem;            /* Base font size, scales with screen */
+    max-width: 600px;           /* Keeps content concise on large screens */
+    text-align: center;
+    font-weight: 500;           /* Slightly bold for readability */
+    color: #0a0a0a;             /* Clean dark color */
+    padding: 10px 20px;         /* Adequate padding for readability */
+    border-radius: 8px;         /* Rounded edges look nice */
+    background: #f2f2f2;        /* Optional light background for clarity */
+    word-wrap: break-word;      /* Prevent overflow on small screens */
+    line-height: 1.5;           /* Comfortable line spacing */
+}
+
+/* Responsive font size for smaller screens */
+@media (max-width: 480px) {
+    #context {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Responsive for larger screens */
+@media (min-width: 1024px) {
+    #context {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+    }
+}

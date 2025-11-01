@@ -1,0 +1,143 @@
+JavaScript Variable Types: var, let, and const
+1️⃣ var
+
+📝 Function-scoped: Variables declared with var are limited to the function they are defined in.
+Example:
+
+function testVar() {
+    var x = 10;
+    console.log(x); // 10
+}
+
+
+♻️ Can be redeclared: You can declare the same variable multiple times in the same scope.
+Example:
+
+var a = 5;
+var a = 10; // No error
+
+
+✏️ Can be updated: You can reassign values.
+Example:
+
+var b = 3;
+b = 7; // updated
+
+
+📌 Hoisted (initialized with undefined): Declarations move to the top of the function scope.
+Example:
+
+console.log(c); // undefined
+var c = 20;
+
+
+🚫 No block scope: var ignores block-level scopes.
+Example:
+
+if(true) { var z = 100; }
+console.log(z); // 100
+
+
+🌐 Global object property: Declaring var globally attaches it to window in browsers.
+Example:
+
+var g = "hello";
+console.log(window.g); // "hello"
+
+
+⚠️ Can lead to bugs: Due to hoisting and lack of block scope.
+
+🕰️ Legacy usage: Modern JS prefers let and const.
+
+2️⃣ let
+
+🔹 Block-scoped: Limited to the block, loop, or if-statement.
+Example:
+
+if(true) {
+    let x = 5;
+    // x is accessible here
+}
+// console.log(x); // Error
+
+
+❌ Cannot be redeclared in the same scope.
+Example:
+
+let y = 10;
+// let y = 20; // Error
+
+
+✏️ Can be updated/reassigned.
+Example:
+
+let z = 3;
+z = 7; // works
+
+
+⚠️ Hoisted but not initialized (Temporal Dead Zone).
+Example:
+
+// console.log(a); // Error
+let a = 5;
+
+
+🚫 Prevents accidental global variables.
+
+🛡️ Safer than var for avoiding bugs.
+
+🚀 Modern JavaScript prefers let over var.
+
+💡 Works well with loops and closures.
+
+3️⃣ const
+
+🔹 Block-scoped: Limited to block, loop, or if-statement.
+Example:
+
+const x = 10;
+
+
+❌ Cannot be redeclared in the same scope.
+Example:
+
+const y = 5;
+// const y = 10; // Error
+
+
+🔒 Cannot be updated/reassigned once initialized.
+Example:
+
+const z = 3;
+// z = 7; // Error
+
+
+⚠️ Must be initialized during declaration.
+Example:
+
+// const a; // Error
+const a = 5;
+
+
+💎 Good for constants and fixed values.
+
+🛡️ Helps avoid bugs due to reassignment.
+
+🧩 Works with objects and arrays, but their properties/elements can change.
+Example:
+
+const obj = {name: "John"};
+obj.name = "Doe"; // works
+
+
+🚀 Modern JavaScript prefers const over var/let for safety.
+
+✅ Tips for usage:
+
+Use const by default unless you know the value will change.
+
+Use let if you need to reassign a variable.
+
+Avoid var in modern JS—it’s mostly for legacy code.
+
+Always prefer block-scoped variables to reduce bugs.
