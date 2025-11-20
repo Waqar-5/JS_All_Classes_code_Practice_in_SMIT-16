@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Signup Form</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- SweetAlert2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="circle-wrapper">
+    <div class="rotating-border"></div>
+
+
+     <!-- Signup Box (hidden initially) -->
+    <div class="login-box" id="signup-box" style="display: none;">
+      <h2>Signup</h2>
+      <form id="signup-form">
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <button type="submit">Signup</button>
+        <a href="#" class="signup" id="show-login">Already have an account?</a>
+      </form>
+    </div>
+
+    <!-- Login Box -->
+    <div class="login-box" id="login-box">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <a href="#" class="forget">Forget Your Password?</a>
+        <button type="submit">Login</button>
+        <a href="#" class="signup" id="show-signup">Signup</a>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

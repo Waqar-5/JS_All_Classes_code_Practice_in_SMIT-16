@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.list-group-item.completed {
+    text-decoration: line-through;
+    background-color: #d4edda !important;
+}
+
+.list-group-item button {
+    margin-left: 10px;
+}

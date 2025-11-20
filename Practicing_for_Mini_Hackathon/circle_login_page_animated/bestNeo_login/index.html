@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neomorphism Login/Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<!-- SIGNUP CARD -->
+<div class="neomorphic neomorphic-card" id="signup-card">
+    <h2>Sign Up</h2>
+    <input type="text" id="signup-username" class="neomorphic neomorphic-input" placeholder="Email">
+    <input type="password" id="signup-password" class="neomorphic neomorphic-input" placeholder="Password">
+    <input type="password" id="signup-confirm" class="neomorphic neomorphic-input" placeholder="Confirm Password">
+    <button id="signup-btn" class="neomorphic neomorphic-button">Sign Up</button>
+    <p>Already have an account? <span id="go-to-login" style="cursor:pointer;color:#6d7532;text-decoration:underline;">Login</span></p>
+</div>
+
+<!-- LOGIN CARD -->
+<div class="neomorphic neomorphic-card" id="login-card" style="display:none;">
+    <h2>Login</h2>
+    <input type="text" id="login-username" class="neomorphic neomorphic-input" placeholder="Email">
+    <input type="password" id="login-password" class="neomorphic neomorphic-input" placeholder="Password">
+    <label style="margin-bottom:15px; font-size:14px;">
+        <input type="checkbox" id="remember-me"> Remember Me
+    </label>
+    <button id="login-btn" class="neomorphic neomorphic-button">Login</button>
+    <p>Don't have an account? <span id="go-to-signup" style="cursor:pointer;color:#6d7532;text-decoration:underline;">Sign Up</span></p>
+</div>
+
+<!-- LOGGED-IN CARD -->
+<div class="neomorphic neomorphic-card" id="welcome-card" style="display:none;">
+    <h2>Welcome!</h2>
+    <p id="welcome-msg"></p>
+    <button id="logout-btn" class="neomorphic neomorphic-button">Logout</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

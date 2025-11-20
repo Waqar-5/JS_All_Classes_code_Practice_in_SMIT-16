@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    max-width: 400px;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+#display {
+    height: 60px;
+    font-size: 1.5rem;
+    background-color: #e9ecef;
+}

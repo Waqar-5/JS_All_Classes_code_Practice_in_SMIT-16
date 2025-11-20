@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neomorphic Login & SignUp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+    <!-- SignUp Card -->
+    <div class="neomorphic neomorphic-card" id="signup-card">
+        <h2>Sign Up</h2>
+        <input type="text" id="signup-username" class="neomorphic-input" placeholder="Email">
+        <input type="password" id="signup-password" class="neomorphic-input" placeholder="Password">
+        <button id="signup-btn" class="neomorphic-button">Sign Up</button>
+        <p>Already have an account? <span id="go-to-login" class="link">Login</span></p>
+    </div>
+
+    <!-- Login Card -->
+    <div class="neomorphic neomorphic-card" id="login-card" style="display: none;">
+        <h2>Login</h2>
+        <input type="text" id="login-username" class="neomorphic-input" placeholder="Email">
+        <input type="password" id="login-password" class="neomorphic-input" placeholder="Password">
+        <button id="login-btn" class="neomorphic-button">Login</button>
+        <p>Don't have an account? <span id="go-to-signup" class="link">Sign Up</span></p>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
