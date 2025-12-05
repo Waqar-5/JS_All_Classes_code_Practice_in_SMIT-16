@@ -1,114 +1,98 @@
-// //  all about promise
-// const myPromise = new Promise((resolve, reject) => {
-//     // const success = true // Simulate success or failure
-//     const success = false // Simulate success or failure
-//     if(success){
-//         resolve("Operation successful!")
-//     } else{
-//         reject("Operation Failed.")
-//     }
-// })
-
-// console.log(myPromise);
-
-
-// myPromise.then((result) => {
-//     console.log(result); // Logs: "Operation successful!"
-    
-// }).catch((error) =>{
-// console.log(error); //// Logs: "Operation failed."
-// })
-
-
-
-// console.log("********************************************");
-
-// const fetchData = () =>{
-//     return new Promise((resolve) =>{
-//         setTimeout(() => resolve("Data Fetched", 1000)
-//     )
-//     });
-// };
-// fetchData().then((data) => {
-//     console.log(data); // Logs: "Data fetched"
-//     return "Processing data";
-// }).then((processedData) => {
-//     console.log(processedData); // Logs: "Processing data"
-// }).catch((error) => {
-//     console.error(error);
-// });
-
-
-// console.log("********************************");
-
-
-// fetchData().then(() =>{
-//     throw new Error("Something Went Wrong!");
-
-// }).catch((error) =>{
-//     console.error(error.message); // Logs: "Something went wrong!"
-
-// })
-
-
-// testing JSON API
-
-
-
-// fetch("https://jsonplaceholder.typicode.com/photdfsfos")
-//   .then(data => data.json())
-//   .then(response => console.log("response ==>", response[0].thumbnailUrl))
-//   .catch(err => console.log("error ==>", err))
-// // fetch("https://jsonplaceholder.typicode.com/photdfsfos")
-// //   .then(data => data.json())
-// //   .then(response => console.log("response ==>", response[0].thumbnailUrl))
-// //   .catch(err => console.log("error ==>", err))
-
-
-
-// fetch("https://jsonplaceholder.typicode.com/photdfsfos")
-
-
-// console.log("Me chala")
-
-
-
-
-// fetch("https://jsonplaceholder.typicode.com/posts")
-// .then(data => data.json())
-// .then(response => console.log("response ==> ", response)
-// ).catch(error => console.log(error))
-
 
 
 const main = document.querySelector(".main");
+const loading = document.querySelector(".loading");
+const searchBtn = document.getElementById("searchBtn");
+const searchInp = document.getElementById("searchInp");
+const categoryBtns = document.querySelectorAll(".category-btn");
+const themeToggle = document.querySelector(".theme-toggle");
 
-main.innerHTML = "Loading..."
+// --- GNews API (browser-friendly) ---
+const API_KEY = ""; // Replace with your free GNews API key
+const PAGE_SIZE = 10;
 
-setTimeout(() =>{
-   fetch("https://jsonplaceholder.typicode.com/posts")
-   .then(data => data.json())
-   .then(res => {
-    // console.log("res ==> ", res);
+let page = 1;
+let currentCategory = "";
+let currentQuery = "";
 
-    main.innerHTML = ""
-    res.map(post => {
-        console.log("post ==> ", post);
-        main.innerHTML += `
-        <div class="card">
-        <div class="mainDiv">
-        <p>userId: ${post.userId}</p>
-        <p>id: ${post.id}</p>
+// Display news cards
+function displayNews(news, append=false){
+  if(!append) main.innerHTML = "";
+  if(!news || news.length===0){ main.innerHTML="<p>No news found.</p>"; return; }
+  news.forEach(article=>{
+    const card = document.createElement("a");
+    card.className = "card";
+    card.href = article.url;
+    card.target="_blank";
+    card.innerHTML = `
+      <img src="${article.image || 'https://via.placeholder.com/300x180'}" alt="News Image">
+      <div class="card-body">
+        <h5 class="card-title">${article.title}</h5>
+        <p class="card-text">${article.description ? article.description.substring(0,100)+'...' : ''}</p>
+        <div class="card-info">
+          <p><strong>Published:</strong> ${new Date(article.publishedAt).toLocaleString()}</p>
         </div>
-        <h1>${post.title}</h1>
-        <p>${post.body}</p>
       </div>
-        `
-        
-    })
-    
-   }).catch(err => main.innerHTML = "Something went wrong, Please try later!")
+      <div class="card-overlay">Click to read full article</div>
+    `;
+    main.appendChild(card);
+  });
+}
 
+// Fetch news from GNews
+async function fetchNews(category="", query="", append=false){
+  loading.style.display="block";
+  let url = `https://gnews.io/api/v4/top-headlines?token=${API_KEY}&lang=en&max=${PAGE_SIZE}&page=${page}`;
+  if(category) url += `&topic=${category}`;
+  if(query) url = `https://gnews.io/api/v4/search?q=${encodeURIComponent(query)}&token=${API_KEY}&lang=en&max=${PAGE_SIZE}&page=${page}`;
+  try{
+    const res = await fetch(url);
+    const data = await res.json();
+    displayNews(data.articles, append);
+  }catch(err){
+    console.error(err);
+    main.innerHTML="<p>Failed to load news.</p>";
+  }finally{
+    loading.style.display="none";
+  }
+}
 
-}, 1000)
+// Initial load
+fetchNews();
 
+// Search
+searchBtn.addEventListener("click", ()=>{
+  const query = searchInp.value.trim();
+  if(!query) return;
+  currentQuery = query;
+  currentCategory = "";
+  page=1;
+  fetchNews("", currentQuery);
+  searchInp.value="";
+});
+searchInp.addEventListener("keydown",(e)=>{ if(e.key==="Enter") searchBtn.click(); });
+
+// Categories
+categoryBtns.forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    categoryBtns.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    const category = btn.dataset.category;
+    currentCategory = category;
+    currentQuery = "";
+    page=1;
+    fetchNews(category);
+  });
+});
+
+// Infinite scroll
+window.addEventListener("scroll", ()=>{
+  if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 100){
+    page++;
+    if(currentQuery) fetchNews("", currentQuery, true);
+    else fetchNews(currentCategory, "", true);
+  }
+});
+
+// Theme toggle
+themeToggle.addEventListener("click",()=>document.body.classList.toggle("dark"));
