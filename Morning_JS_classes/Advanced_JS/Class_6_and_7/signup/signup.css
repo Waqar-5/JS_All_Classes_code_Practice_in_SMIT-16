@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+    /* Modern gradient background */
+    background: linear-gradient(135deg, #6B73FF, #000DFF);
+}
+
+/* Glass effect container */
+.container{
+    width: 320px;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title */
+.container h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 34px;
+    font-weight: 700;
+
+    color: white;
+
+    /* Slide animation */
+    animation: slideDown 1s ease;
+}
+
+/* Labels & Inputs */
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputs label{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.inputs input{
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+
+    outline: none;
+    font-size: 16px;
+
+    transition: all 0.3s ease;
+}
+
+.inputs input::placeholder{
+    color: #e0e0e0;
+}
+
+/* Input focus effect */
+.inputs input:focus{
+    background: rgba(255, 255, 255, 0.45);
+    transform: scale(1.02);
+}
+
+/* Button style */
+#btn{
+    margin-top: 15px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #00D672;
+    color: #fff;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Button hover animation */
+#btn:hover{
+    background: #00ad5c;
+    transform: translateY(-3px);
+}
+
+.Btns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn{
+   margin-top: 15px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #00D672;
+    color: #fff;
+
+    cursor: pointer;
+    transition: 0.3s ease; 
+}
+
+.btn:hover{
+     background: #00ad5c;
+    transform: translateY(-3px);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
