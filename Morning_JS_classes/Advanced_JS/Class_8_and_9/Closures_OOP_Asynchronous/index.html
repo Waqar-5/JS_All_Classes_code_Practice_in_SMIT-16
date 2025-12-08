@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures, OOP with JavaScript, Asynchronous JavaScript</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: #f0f0f5;
+    }
+
+    #loader {
+        display: none; /* hidden by default */
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #4CAF50;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+
+    #pic {
+        max-width: 300px;
+        max-height: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #45a049;
+    }
+    </style>
+</head>
+<body>
+    
+<h2>All about Closures, OOP with JavaScript, Asynchronous JavaScript
+ </h2>
+  <!-- <img id="pic" alt="random pic"> -->
+
+  <div id="loader"></div>
+<img id="pic" src="" alt="Random Image">
+<button id="newImageBtn">Load New Image</button>
+</body>
+<script src="./app.js"></script>
+</html>
