@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/arrow.png" type="image/png">
+  <title>All about Arrow Function</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <h1>All About Arrow Functions</h1>
+
+  <div class="button-container">
+    <button id="arrowBtn">Show Arrow Function Docs</button>
+  </div>
+
+  <div class="doc-section" id="docSection">
+    <h2>Arrow Function Overview</h2>
+    <p>
+      Arrow functions are a shorter syntax for writing JavaScript functions.
+      They are anonymous and change how the `this` keyword behaves.
+    </p>
+    <p>
+      Example:
+      <pre>
+const add = (a, b) => a + b;
+console.log(add(2,3)); // 5
+      </pre>
+    </p>
+    <p>
+      <strong>Features:</strong>
+      <ul>
+        <li>Shorter syntax</li>
+        <li>Implicit return for single-expression functions</li>
+        <li>Lexical `this` binding</li>
+      </ul>
+    </p>
+    <p>
+      You can read the full documentation on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">MDN Arrow Functions</a>.
+    </p>
+  </div>
+</body>
+<script src="./main.js"></script>
+</html>

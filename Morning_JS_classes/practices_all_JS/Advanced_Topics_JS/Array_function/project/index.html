@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Function Mastery App</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <h1>Arrow Function Mastery App</h1>
+  <p style="text-align:center;">Practice & Learn All Arrow Function Concepts in One Place</p>
+
+  <!-- Section 1: Basic Calculator -->
+  <section>
+    <h2>1️⃣ Basic Calculator</h2>
+    <input type="number" id="num1" placeholder="Number 1">
+    <input type="number" id="num2" placeholder="Number 2">
+    <button onclick="calculate('add')">Add</button>
+    <button onclick="calculate('subtract')">Subtract</button>
+    <button onclick="calculate('multiply')">Multiply</button>
+    <button onclick="calculate('divide')">Divide</button>
+    <div class="output" id="calcOutput"></div>
+  </section>
+
+  <!-- Section 2: Array Operations -->
+  <section>
+    <h2>2️⃣ Array Playground</h2>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by comma">
+    <button onclick="performArrayOps()">Run Array Operations</button>
+    <div class="output" id="arrayOutput"></div>
+  </section>
+
+  <!-- Section 3: Lexical This Explorer -->
+  <section>
+    <h2>3️⃣ Lexical 'this' Explorer</h2>
+    <button onclick="lexicalThisDemo()">Show Team Members</button>
+    <div class="output" id="thisOutput"></div>
+  </section>
+
+  <!-- Section 4: Nested Arrow Functions -->
+  <section>
+    <h2>4️⃣ Nested Arrow Functions (Currying)</h2>
+    <input type="number" id="curryNum1" placeholder="Number 1">
+    <input type="number" id="curryNum2" placeholder="Number 2">
+    <button onclick="nestedArrow()">Multiply</button>
+    <div class="output" id="curryOutput"></div>
+  </section>
+
+  <!-- Section 5: Rest Parameters Demo -->
+  <section>
+    <h2>5️⃣ Sum Using Rest Parameters</h2>
+    <input type="text" id="restInput" placeholder="Enter numbers separated by comma">
+    <button onclick="restDemo()">Calculate Sum</button>
+    <div class="output" id="restOutput"></div>
+  </section>
+
+ 
+
+</body>
+<script src="./app.js"></script>
+</html>
