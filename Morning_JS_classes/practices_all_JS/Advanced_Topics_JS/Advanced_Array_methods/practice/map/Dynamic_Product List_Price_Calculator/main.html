@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Product Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🛒 Shopping Cart</h1>
+    
+    <div class="filters">
+      <button data-category="all" class="active">All</button>
+      <button data-category="electronics">Electronics</button>
+      <button data-category="clothing">Clothing</button>
+      <button data-category="books">Books</button>
+    </div>
+
+    <div class="products" id="products"></div>
+
+    <div class="total">
+      Total Price: <span id="totalPrice">0</span> 💰
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

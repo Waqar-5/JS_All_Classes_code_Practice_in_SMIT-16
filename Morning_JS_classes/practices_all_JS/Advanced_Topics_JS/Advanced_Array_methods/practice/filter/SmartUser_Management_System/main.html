@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart User Filter Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #222;
+      color: white;
+    }
+
+    .active {
+      color: green;
+      font-weight: bold;
+    }
+
+    .inactive {
+      color: red;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>👥 Smart User Filter Dashboard</h1>
+
+<!-- FILTER CONTROLS -->
+<div class="filters">
+  <input type="text" id="searchInput" placeholder="Search by name..." />
+
+  <select id="roleFilter">
+    <option value="">All Roles</option>
+    <option value="admin">Admin</option>
+    <option value="manager">Manager</option>
+    <option value="user">User</option>
+  </select>
+
+  <select id="statusFilter">
+    <option value="">All Status</option>
+    <option value="true">Active</option>
+    <option value="false">Inactive</option>
+  </select>
+
+  <select id="ageFilter">
+    <option value="">All Ages</option>
+    <option value="18">18+</option>
+    <option value="25">25+</option>
+    <option value="30">30+</option>
+  </select>
+</div>
+
+<!-- USER TABLE -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Role</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="userTable"></tbody>
+</table>
+
+<footer>
+  Built with ❤️ using JavaScript filter()
+</footer>
+
+<script>
+  // =========================
+  // USER DATA (Mock Backend)
+  // =========================
+  const users = [
+    { id: 1, name: "Ali", age: 22, role: "admin", active: true },
+    { id: 2, name: "Sara", age: 17, role: "user", active: false },
+    { id: 3, name: "Ahmed", age: 30, role: "user", active: true },
+    { id: 4, name: "Fatima", age: 25, role: "manager", active: true },
+    { id: 5, name: "Zain", age: 15, role: "user", active: true },
+    { id: 6, name: "Usman", age: 40, role: "admin", active: false },
+  ];
+
+  // DOM ELEMENTS
+  const searchInput = document.getElementById("searchInput");
+  const roleFilter = document.getElementById("roleFilter");
+  const statusFilter = document.getElementById("statusFilter");
+  const ageFilter = document.getElementById("ageFilter");
+  const tableBody = document.getElementById("userTable");
+
+  // =========================
+  // CORE FILTER FUNCTION
+  // =========================
+  function applyFilters() {
+    const searchText = searchInput.value.toLowerCase();
+    const selectedRole = roleFilter.value;
+    const selectedStatus = statusFilter.value;
+    const selectedAge = ageFilter.value;
+
+    const filteredUsers = users.filter(user => {
+      // Search filter
+      const matchesName =
+        user.name.toLowerCase().includes(searchText);
+
+      // Role filter
+      const matchesRole =
+        selectedRole === "" || user.role === selectedRole;
+
+      // Status filter
+      const matchesStatus =
+        selectedStatus === "" || user.active === (selectedStatus === "true");
+
+      // Age filter
+      const matchesAge =
+        selectedAge === "" || user.age >= Number(selectedAge);
+
+      // FINAL DECISION
+      return matchesName && matchesRole && matchesStatus && matchesAge;
+    });
+
+    renderUsers(filteredUsers);
+  }
+
+  // =========================
+  // RENDER FUNCTION
+  // =========================
+  function renderUsers(data) {
+    tableBody.innerHTML = "";
+
+    data.forEach(user => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.age}</td>
+        <td>${user.role}</td>
+        <td class="${user.active ? "active" : "inactive"}">
+          ${user.active ? "Active" : "Inactive"}
+        </td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  }
+
+  // EVENT LISTENERS
+  searchInput.addEventListener("input", applyFilters);
+  roleFilter.addEventListener("change", applyFilters);
+  statusFilter.addEventListener("change", applyFilters);
+  ageFilter.addEventListener("change", applyFilters);
+
+  // INITIAL LOAD
+  renderUsers(users);
+</script>
+
+</body>
+</html>
