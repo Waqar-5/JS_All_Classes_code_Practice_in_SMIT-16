@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart User Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>Smart User Activity Dashboard</h1>
+
+    <div class="stats">
+      <div class="card">
+        <h3>Total Users</h3>
+        <p id="totalUsers">0</p>
+      </div>
+      <div class="card">
+        <h3>Active Users</h3>
+        <p id="activeUsers">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Logins</h3>
+        <p id="totalLogins">0</p>
+      </div>
+    </div>
+
+    <h2>User Details</h2>
+    <div id="users" class="users"></div>
+
+    <h2>System Alerts</h2>
+    <div id="alerts" class="alerts"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

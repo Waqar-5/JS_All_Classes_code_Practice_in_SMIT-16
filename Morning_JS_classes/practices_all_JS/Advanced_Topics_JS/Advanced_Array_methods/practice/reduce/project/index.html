@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Intelligence</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+<h1>💸 Smart Expense Intelligence</h1>
+
+<div class="controls">
+  <input id="title" placeholder="Expense name">
+  <input id="amount" type="number" placeholder="Amount">
+  <select id="category">
+    <option>Food</option>
+    <option>Transport</option>
+    <option>Shopping</option>
+    <option>Bills</option>
+  </select>
+  <button onclick="addExpense()">➕ Add</button>
+</div>
+
+<div class="stats">
+  <div class="card">
+    <h3>💰 Total</h3>
+    <div id="total" class="value">0</div>
+  </div>
+
+  <div class="card">
+    <h3>📊 Average</h3>
+    <div id="average" class="value">0</div>
+  </div>
+
+  <div class="card">
+    <h3>🔥 Highest</h3>
+    <div id="highest" class="value">0</div>
+  </div>
+
+  <div class="card">
+    <h3>📂 By Category</h3>
+    <div id="byCategory" class="list"></div>
+  </div>
+</div>
+</div>
+
+    
+</body>
+<script src="./app.js"></script>
+</html>
