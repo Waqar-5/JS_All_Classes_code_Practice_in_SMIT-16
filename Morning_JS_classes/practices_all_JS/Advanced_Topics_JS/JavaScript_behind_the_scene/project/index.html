@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Execution Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>JavaScript Execution Visualizer</h1>
+    <p>Visualize Call Stack, Event Loop, Microtasks, Tasks, Promises, setTimeout, and Starvation.</p>
+  </header>
+
+  <main>
+    <section class="code-panel">
+      <h2>Code Input</h2>
+      <textarea id="codeInput" placeholder="console.log('Start');\nsetTimeout(() => console.log('Timeout'), 0);\nPromise.resolve().then(() => console.log('Promise'));\nconsole.log('End');"></textarea>
+      <button id="runCode">Run Code</button>
+    </section>
+
+    <section class="visual-panel">
+      <div class="stack-panel">
+        <h3>Call Stack</h3>
+        <ul id="callStack"></ul>
+      </div>
+      <div class="queues-panel">
+        <h3>Microtask Queue</h3>
+        <ul id="microtaskQueue"></ul>
+        <h3>Task Queue</h3>
+        <ul id="taskQueue"></ul>
+      </div>
+      <div class="output-panel">
+        <h3>Console Output</h3>
+        <div id="consoleOutput"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>JS Execution Visualizer &copy; 2026</p>
+  </footer>
+
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
