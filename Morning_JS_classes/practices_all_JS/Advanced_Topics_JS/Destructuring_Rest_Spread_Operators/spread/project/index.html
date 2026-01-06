@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Set document language -->
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+  <title>Spread Operator Playground - Showcase</title> <!-- Page title -->
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Spread Operator Playground</h1> <!-- Main header -->
+</header>
+
+<div class="container"> <!-- Wrapper for all cards -->
+
+  <!-- Array Copy & Merge Card -->
+  <div class="card">
+    <h2>1️⃣ Copy & Merge Arrays</h2>
+    <div class="flex">
+      <input id="arr1" placeholder="Array 1: 1,2,3"> <!-- Array 1 input -->
+      <input id="arr2" placeholder="Array 2: 4,5,6"> <!-- Array 2 input -->
+      <button onclick="copyMergeArrays()">Run</button> <!-- Run function -->
+    </div>
+    <pre id="arrOutput"></pre> <!-- Output display -->
+  </div>
+
+  <!-- Object Copy & Merge Card -->
+  <div class="card">
+    <h2>2️⃣ Copy & Merge Objects</h2>
+    <div class="flex">
+      <input id="obj1" placeholder='Object 1: {"a":1}'> <!-- Object 1 input -->
+      <input id="obj2" placeholder='Object 2: {"b":2}'> <!-- Object 2 input -->
+      <button onclick="copyMergeObjects()">Run</button> <!-- Run function -->
+    </div>
+    <pre id="objOutput"></pre> <!-- Output display -->
+  </div>
+
+  <!-- Add Elements Card -->
+  <div class="card">
+    <h2>3️⃣ Add Elements to Array</h2>
+    <div class="flex">
+      <input id="baseArr" placeholder="Base Array: 1,2"> <!-- Base array -->
+      <input id="addArr" placeholder="Add Elements: 3,4"> <!-- Elements to add -->
+      <button onclick="addElements()">Run</button> <!-- Run function -->
+    </div>
+    <pre id="addOutput"></pre>
+  </div>
+
+  <!-- String to Array Card -->
+  <div class="card">
+    <h2>4️⃣ Convert String to Array</h2>
+    <div class="flex">
+      <input id="strInput" placeholder="Enter a string: JS"> <!-- String input -->
+      <button onclick="stringToArray()">Run</button> <!-- Run function -->
+    </div>
+    <pre id="strOutput"></pre>
+  </div>
+
+  <!-- Pass Array to Function Card -->
+  <div class="card">
+    <h2>5️⃣ Pass Array to Function</h2>
+    <div class="flex">
+      <input id="funcArr" placeholder="Enter numbers: 1,2,3"> <!-- Numbers input -->
+      <button onclick="passToFunction()">Sum</button> <!-- Run function -->
+    </div>
+    <pre id="funcOutput"></pre>
+  </div>
+
+  <!-- Shallow Copy Demo Card -->
+  <div class="card">
+    <h2>6️⃣ Shallow Copy Demo</h2>
+    <button onclick="shallowCopyDemo()">Run Demo</button>
+    <pre id="shallowOutput"></pre>
+  </div>
+
+</div>
+
+<!-- External JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

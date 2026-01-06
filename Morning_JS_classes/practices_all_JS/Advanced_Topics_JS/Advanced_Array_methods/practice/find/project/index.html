@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management System</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .user-card {
+      border: 1px solid #dee2e6;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+    .user-card:hover {
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="mb-4 text-center">User Management System</h2>
+
+  <!-- Search Inputs -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <input type="number" id="searchId" class="form-control" placeholder="Search by ID">
+    </div>
+    <div class="col-md-4">
+      <input type="email" id="searchEmail" class="form-control" placeholder="Search by Email">
+    </div>
+    <div class="col-md-4">
+      <input type="number" id="searchAge" class="form-control" placeholder="Find user older than Age">
+    </div>
+  </div>
+
+  <!-- User Display Area -->
+  <div id="userResults"></div>
+</div>
+
+<!-- Bootstrap JS Bundle CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="userManagement.js"></script>
+
+</body>
+</html>
