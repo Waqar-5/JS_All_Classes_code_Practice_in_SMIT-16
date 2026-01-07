@@ -1,0 +1,71 @@
+/* 1️⃣ General body */
+body {
+  font-family: Arial, sans-serif; /* Clean font */
+  background-color: #f4f4f4;      /* Light gray */
+  display: flex;                  /* Flex container */
+  justify-content: center;        /* Center horizontally */
+  align-items: center;            /* Center vertically */
+  height: 100vh;                  /* Full height */
+}
+
+/* 2️⃣ Main container */
+.container {
+  background-color: #fff;         /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 550px;
+  text-align: center;
+}
+
+/* 3️⃣ Inputs and button */
+input {
+  padding: 8px;
+  margin: 5px 2px;
+  width: 30%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #17a2b8; /* Cyan button */
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #117a8b;
+}
+
+/* 4️⃣ Lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  padding: 8px 10px;
+  background-color: #e0e0e0;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: #dc3545; /* Red remove button */
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+li button:hover {
+  background-color: #c82333;
+}

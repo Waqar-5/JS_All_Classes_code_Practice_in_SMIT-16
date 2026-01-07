@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+  <title>User Score Tracker</title> <!-- Page title -->
+  <link rel="stylesheet" href="style.css"> <!-- Link CSS file -->
+</head>
+<body>
+  <div class="container"> <!-- Main container -->
+    <h1>User Score Tracker</h1> <!-- Heading -->
+
+    <!-- Inputs for user ID and score -->
+    <input type="text" id="userIdInput" placeholder="Enter User ID"> 
+    <input type="number" id="scoreInput" placeholder="Enter Score">
+    <button id="addUserBtn">Add / Update User</button> <!-- Add/update button -->
+
+    <h2>Users:</h2>
+    <ul id="userList"></ul> <!-- List of users -->
+
+    <p>Total Users: <span id="userCount">0</span></p> <!-- Total users -->
+  </div>
+
+  <script src="script.js"></script> <!-- Link JS file -->
+</body>
+</html>

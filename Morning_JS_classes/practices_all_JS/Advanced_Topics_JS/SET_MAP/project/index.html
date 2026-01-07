@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+  <title>Team Skill Tracker</title> <!-- Page title -->
+  <link rel="stylesheet" href="style.css"> <!-- Link CSS file -->
+</head>
+<body>
+  <div class="container"> <!-- Main container -->
+    <h1>Team Skill Tracker</h1> <!-- Heading -->
+
+    <!-- Team input -->
+    <input type="text" id="teamInput" placeholder="Enter Team Name"> 
+    <input type="text" id="memberInput" placeholder="Enter Member Name">
+    <input type="text" id="skillInput" placeholder="Enter Skill">
+    <button id="addMemberBtn">Add Member</button> <!-- Add member button -->
+
+    <h2>Team Members:</h2>
+    <ul id="memberList"></ul> <!-- Display unique members -->
+
+    <h2>Skill Scores:</h2>
+    <ul id="skillList"></ul> <!-- Display member → skill Map -->
+
+    <p>Total Teams: <span id="teamCount">0</span></p> <!-- Total teams -->
+  </div>
+
+  <script src="script.js"></script> <!-- Link JS file -->
+</body>
+</html>

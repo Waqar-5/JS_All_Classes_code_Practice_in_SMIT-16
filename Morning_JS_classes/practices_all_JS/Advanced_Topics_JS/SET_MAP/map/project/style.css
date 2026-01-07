@@ -1,0 +1,71 @@
+/* 1️⃣ General body styles */
+body {
+  font-family: Arial, sans-serif; /* Clean readable font */
+  background-color: #f0f0f0;      /* Light gray background */
+  display: flex;                  /* Flex layout */
+  justify-content: center;        /* Center horizontally */
+  align-items: center;            /* Center vertically */
+  height: 100vh;                  /* Full viewport height */
+}
+
+/* 2️⃣ Main container */
+.container {
+  background-color: #fff;         /* White card */
+  padding: 20px;                  /* Inner padding */
+  border-radius: 10px;            /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+  width: 400px;                   /* Fixed width */
+  text-align: center;             /* Center text */
+}
+
+/* 3️⃣ Input and button styles */
+input {
+  padding: 10px;
+  width: 45%;
+  margin: 5px 2px;                /* Margin between inputs */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #28a745;      /* Green button */
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;      /* Darker green on hover */
+}
+
+/* 4️⃣ User list */
+ul {
+  list-style: none;   /* Remove bullets */
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  padding: 8px 10px;
+  background-color: #e0e0e0;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: #dc3545; /* Red delete button */
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+li button:hover {
+  background-color: #c82333;
+}

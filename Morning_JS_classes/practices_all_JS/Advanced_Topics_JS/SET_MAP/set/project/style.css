@@ -1,0 +1,71 @@
+/* 1️⃣ General body styles */
+body {
+  font-family: Arial, sans-serif; /* Clean readable font */
+  background-color: #f5f5f5;      /* Light background */
+  display: flex;                  /* Flex layout to center content */
+  justify-content: center;        /* Center horizontally */
+  align-items: center;            /* Center vertically */
+  height: 100vh;                  /* Full viewport height */
+}
+
+/* 2️⃣ Main container styles */
+.container {
+  background-color: #fff;         /* White card */
+  padding: 20px;                  /* Inner spacing */
+  border-radius: 10px;            /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow */
+  width: 400px;                   /* Fixed width */
+  text-align: center;             /* Centered text */
+}
+
+/* 3️⃣ Input and button styles */
+input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007BFF; /* Blue button */
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+/* 4️⃣ Task list styles */
+ul {
+  list-style: none;   /* Remove bullets */
+  padding: 0;         /* Remove padding */
+  margin-top: 15px;
+}
+
+li {
+  padding: 8px 10px;
+  background-color: #e0e0e0;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between; /* Space between task and remove button */
+  align-items: center;
+}
+
+li button {
+  background-color: #FF4C4C; /* Red delete button */
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+li button:hover {
+  background-color: #cc0000;
+}
