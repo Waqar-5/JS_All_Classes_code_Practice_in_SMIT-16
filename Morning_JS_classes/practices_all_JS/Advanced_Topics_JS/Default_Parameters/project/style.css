@@ -1,0 +1,12 @@
+body { 
+  font-family: 'Arial', sans-serif; /* set font for body */
+}
+
+h2 { 
+  color: #343a40; /* heading color */
+}
+
+#quoteDisplay { 
+  font-size: 1.1rem; /* slightly larger font */
+  color: #555; /* grey color for quote */
+}

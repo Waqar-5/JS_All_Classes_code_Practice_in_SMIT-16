@@ -1,0 +1,47 @@
+<!DOCTYPE html> <!-- define HTML5 document -->
+<html lang="en"> <!-- set language to English -->
+<head>
+  <meta charset="UTF-8"> <!-- character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive meta tag -->
+  <title>Dynamic Greeting Dashboard</title> <!-- page title -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="style.css"> <!-- custom CSS -->
+</head>
+<body class="bg-light"> <!-- body with light background -->
+
+  <div class="container py-5"> <!-- Bootstrap container with padding -->
+    <h2 class="text-center mb-4">Dynamic Greeting Dashboard</h2> <!-- page heading -->
+
+    <div class="card p-4 shadow"> <!-- Bootstrap card with padding and shadow -->
+      <div class="mb-3"> <!-- margin bottom -->
+        <label for="name" class="form-label">Your Name</label> <!-- label for name -->
+        <input type="text" id="name" class="form-control" placeholder="Enter your name"> <!-- input field -->
+      </div>
+
+      <div class="mb-3"> <!-- margin bottom -->
+        <label for="greetingType" class="form-label">Greeting Type</label> <!-- label -->
+        <select id="greetingType" class="form-select"> <!-- dropdown -->
+          <option value="">Select Greeting</option> <!-- placeholder option -->
+          <option value="Morning">Morning</option> <!-- option 1 -->
+          <option value="Afternoon">Afternoon</option> <!-- option 2 -->
+          <option value="Evening">Evening</option> <!-- option 3 -->
+        </select>
+      </div>
+
+      <div class="mb-3"> <!-- margin bottom -->
+        <label for="customMessage" class="form-label">Custom Message</label> <!-- label -->
+        <input type="text" id="customMessage" class="form-control" placeholder="Enter a custom message (optional)"> <!-- input -->
+      </div>
+
+      <button id="greetBtn" class="btn btn-primary w-100">Show Greeting</button> <!-- button -->
+    </div>
+
+    <div class="mt-4 text-center"> <!-- margin top -->
+      <h4 id="greetingDisplay" class="text-success"></h4> <!-- greeting display -->
+      <p id="quoteDisplay" class="fst-italic"></p> <!-- quote display -->
+    </div>
+  </div>
+
+  <script src="script.js"></script> <!-- link JS -->
+</body>
+</html>
