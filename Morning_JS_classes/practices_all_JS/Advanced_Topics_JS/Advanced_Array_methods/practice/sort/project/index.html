@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sort Visualizer Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔀 Sort Visualizer Playground</h1>
+
+    <div class="input-area">
+      <input type="text" id="itemInput" placeholder="Enter number or text">
+      <button id="addBtn">Add Item</button>
+    </div>
+
+    <h2>Items:</h2>
+    <ul id="itemList"></ul>
+
+    <h2>Sort Options:</h2>
+    <div class="buttons">
+      <button onclick="sortAlphabetical()">A → Z</button>
+      <button onclick="sortReverse()">Z → A</button>
+      <button onclick="sortByLength()">By Length</button>
+      <button onclick="sortNumbersAsc()">Numbers ↑</button>
+      <button onclick="sortNumbersDesc()">Numbers ↓</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
