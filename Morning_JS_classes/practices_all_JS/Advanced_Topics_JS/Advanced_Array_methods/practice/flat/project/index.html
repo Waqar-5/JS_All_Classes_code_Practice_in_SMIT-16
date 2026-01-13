@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat Explorer - Interactive Flattener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flat Explorer 🌐</h1>
+
+        <p>Enter a nested array (numbers, strings, or mixed):</p>
+        <input type="text" id="arrayInput" placeholder='Example: [1, [2, [3, 4]], 5]'>
+
+        <p>Flatten Depth:</p>
+        <select id="depthSelect">
+            <option value="1">1 (default)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="Infinity">Infinity (fully flatten)</option>
+        </select>
+
+        <div class="buttons">
+            <button id="flattenBtn">Flatten Array</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+
+        <div class="results">
+            <h3>Original Array:</h3>
+            <p id="originalArray">[]</p>
+
+            <h3>Flattened Array:</h3>
+            <p id="flattenedArray">[]</p>
+        </div>
+
+        <div class="explanation">
+            <h3>Explanation:</h3>
+            <p id="explanation">Click "Flatten Array" to see the flattening process!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
