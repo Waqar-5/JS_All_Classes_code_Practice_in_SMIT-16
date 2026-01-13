@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Data Explorer & Sorter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nested Data Explorer & Sorter</h1>
+
+        <div class="controls">
+            <button id="flattenBtn">Flatten Data</button>
+            <button id="sortAlphaBtn">Sort Alphabetically</button>
+            <button id="sortLengthBtn">Sort by Length</button>
+            <input type="text" id="filterInput" placeholder="Filter by text...">
+        </div>
+
+        <h2>Nested Data:</h2>
+        <pre id="nestedData"></pre>
+
+        <h2>Flattened Data:</h2>
+        <pre id="flattenedData"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
