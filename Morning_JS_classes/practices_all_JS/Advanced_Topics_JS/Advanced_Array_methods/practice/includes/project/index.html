@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Explorer & Manipulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>String Explorer & Manipulator</h1>
+
+    <!-- String Input -->
+    <section>
+      <h2>Enter Your String</h2>
+      <textarea id="mainString" rows="4" placeholder="Type your string here..."></textarea>
+    </section>
+
+    <!-- Substring Search -->
+    <section>
+      <h2>Search Substring</h2>
+      <input type="text" id="searchInput" placeholder="Enter substring">
+      <button onclick="searchSubstring()">Search</button>
+      <button onclick="searchSubstringCaseInsensitive()">Search Case-Insensitive</button>
+      <p id="searchResult" class="result-box"></p>
+    </section>
+
+    <!-- String Transformations -->
+    <section>
+      <h2>String Transformations</h2>
+      <button onclick="reverseString()">Reverse</button>
+      <button onclick="uppercaseString()">Uppercase</button>
+      <button onclick="lowercaseString()">Lowercase</button>
+      <p id="transformResult" class="result-box"></p>
+    </section>
+
+    <!-- Count Substring Occurrences -->
+    <section>
+      <h2>Count Substring Occurrences</h2>
+      <input type="text" id="countInput" placeholder="Enter substring">
+      <button onclick="countSubstring()">Count</button>
+      <p id="countResult" class="result-box"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
