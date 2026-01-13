@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Method Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Every Method Explorer <span>🔍</span></h1>
+            <p>Learn & Experiment with <code>every()</code> Method in JavaScript</p>
+        </header>
+
+        <!-- Numbers Card -->
+        <div class="card">
+            <h2>Numbers Check</h2>
+            <p>Check if all numbers are even.</p>
+            <div class="input-group">
+                <input type="number" id="numInput" placeholder="Enter a number">
+                <button id="addNumBtn">Add</button>
+            </div>
+            <p class="list-label">Numbers: <span id="numList">[]</span></p>
+            <button class="check-btn" id="checkEvenBtn">Check All Even</button>
+            <p class="result">Result: <span id="numResult">N/A</span></p>
+        </div>
+
+        <!-- Words Card -->
+        <div class="card">
+            <h2>Words Check</h2>
+            <p>Check if all words start with a specific letter.</p>
+            <div class="input-group">
+                <input type="text" id="wordInput" placeholder="Enter a word">
+                <input type="text" id="letterInput" maxlength="1" placeholder="Letter">
+                <button id="addWordBtn">Add</button>
+            </div>
+            <p class="list-label">Words: <span id="wordList">[]</span></p>
+            <button class="check-btn" id="checkLetterBtn">Check All Start With Letter</button>
+            <p class="result">Result: <span id="wordResult">N/A</span></p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="card">
+            <h2>Form Fields Check</h2>
+            <p>Check if all form fields are filled.</p>
+            <div class="input-group">
+                <input type="text" class="formField" placeholder="Username">
+                <input type="email" class="formField" placeholder="Email">
+                <input type="password" class="formField" placeholder="Password">
+            </div>
+            <button class="check-btn" id="checkFormBtn">Check All Filled</button>
+            <p class="result">Result: <span id="formResult">N/A</span></p>
+        </div>
+
+        <footer>
+            <p>Made by <strong>Waqar Ali</strong> | Learn JavaScript <code>every()</code> Method</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
