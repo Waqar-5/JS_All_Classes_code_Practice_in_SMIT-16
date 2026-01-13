@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Some Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Interactive <code>some()</code> Explorer</h1>
+
+    <!-- Input field for user to enter numbers, strings, or objects -->
+    <div class="input-section">
+      <label>Enter array elements (comma separated):</label>
+      <input type="text" id="inputArray" placeholder='e.g., 5, 12, 7 or apple, banana'>
+    </div>
+
+    <!-- Dropdown to select type of test/condition -->
+    <div class="condition-section">
+      <label>Select a condition to check:</label>
+      <select id="conditionType">
+        <option value="numberGreaterThan10">Number > 10</option>
+        <option value="isEven">Number is even</option>
+        <option value="containsA">String contains "a"</option>
+        <option value="lengthGreater3">String length > 3</option>
+        <option value="custom">Custom JS Condition</option>
+      </select>
+    </div>
+
+    <!-- Optional input for custom condition -->
+    <div class="custom-section" id="customSection" style="display:none;">
+      <label>Enter custom JS condition for 'item':</label>
+      <input type="text" id="customCondition" placeholder='e.g., item > 5 or item.includes("b")'>
+    </div>
+
+    <!-- Button to check the condition -->
+    <button id="checkBtn">Check Array</button>
+
+    <!-- Output -->
+    <h2>Result:</h2>
+    <pre id="result">No result yet.</pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
