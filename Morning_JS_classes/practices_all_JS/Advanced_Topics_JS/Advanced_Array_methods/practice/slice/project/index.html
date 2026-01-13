@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slice Adventure - Snack Box</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍎 Slice Adventure - Build Your Snack Box!</h1>
+
+    <section>
+      <h2>Original Snacks</h2>
+      <ul id="originalList"></ul>
+    </section>
+
+    <section class="controls">
+      <label>Start Index: <input type="number" id="startIndex"></label>
+      <label>End Index: <input type="number" id="endIndex"></label>
+      <button id="sliceBtn">Slice Snacks</button>
+      <button id="reverseBtn">Reverse Slice</button>
+      <button id="stringSliceBtn">Slice Snack Name</button>
+    </section>
+
+    <section>
+      <h2>Your Snack Box 🍱</h2>
+      <ul id="slicedList"></ul>
+    </section>
+
+    <section>
+      <h2>Slice a Snack Name 🍫</h2>
+      <input type="text" id="snackNameInput" placeholder="Enter a snack name">
+      <input type="number" id="stringStart" placeholder="Start">
+      <input type="number" id="stringEnd" placeholder="End">
+      <button id="sliceNameBtn">Slice Name</button>
+      <p id="slicedName"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
