@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS Brain Trainer & Data Explorer</title>
+<style>
+    body { font-family: 'Arial', sans-serif; margin:0; background: #f0f4f8; }
+    header { background: #5a67d8; color: #fff; text-align:center; padding:1rem; }
+    nav { display:flex; justify-content:center; gap:10px; margin:1rem 0; flex-wrap:wrap; }
+    nav button { padding:0.5rem 1rem; border:none; border-radius:5px; cursor:pointer; font-weight:bold; background:#fff; color:#5a67d8; }
+    nav button:hover { background:#5a67d8; color:#fff; transition:0.3s; }
+    section { display:none; padding:2rem; max-width:900px; margin:1rem auto; background:#fff; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+    section.active { display:block; }
+    h2 { color:#5a67d8; margin-bottom:1rem; }
+    .memory-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
+    .card { padding:20px; background:#e2e8f0; text-align:center; font-size:1.2rem; cursor:pointer; border-radius:5px; user-select:none; }
+    .card.matched { background:#48bb78; color:#fff; cursor:default; }
+    .card.flipped { background:#5a67d8; color:#fff; }
+    input, button, textarea { padding:0.5rem; margin:0.3rem 0; border-radius:5px; border:1px solid #ccc; }
+    .task { padding:0.5rem; border:1px solid #ccc; margin:0.5rem 0; border-radius:5px; display:flex; justify-content:space-between; }
+    button.small { padding:0.2rem 0.5rem; font-size:0.8rem; }
+    pre { background:#edf2f7; padding:1rem; border-radius:5px; overflow:auto; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>JS Brain Trainer & Data Explorer</h1>
+    <p>Unique Project Demonstrating All Advanced JS Concepts</p>
+</header>
+
+<nav>
+    <button onclick="showLayer(1)">Memory Game</button>
+    <button onclick="showLayer(2)">Math Trainer</button>
+    <button onclick="showLayer(3)">Data Explorer</button>
+    <button onclick="showLayer(4)">Mini Task Manager</button>
+</nav>
+
+<!-- Layer 1: Memory Game -->
+<section id="layer1">
+    <h2>Memory Game</h2>
+    <p>Match the pairs! (Demonstrates: Array methods, Map, Set, Arrow Functions)</p>
+    <div class="memory-grid" id="memoryGrid"></div>
+    <p id="memoryMessage"></p>
+</section>
+
+<!-- Layer 2: Math Trainer -->
+<section id="layer2">
+    <h2>Math Trainer</h2>
+    <p>Answer the random math questions! (Destructuring, Rest/Spread, Arrow Functions, Template Literals)</p>
+    <div id="mathQuestion"></div>
+    <input type="number" id="mathAnswer" placeholder="Your Answer">
+    <button id="submitMath">Submit</button>
+    <p id="mathMessage"></p>
+</section>
+
+<!-- Layer 3: Data Explorer -->
+<section id="layer3">
+    <h2>Data Explorer</h2>
+    <p>Interact with dynamic data using Map, Set, Array Methods</p>
+    <button id="generateData">Generate Random Data</button>
+    <pre id="dataOutput"></pre>
+</section>
+
+<!-- Layer 4: Mini Task Manager -->
+<section id="layer4">
+    <h2>Mini Task Manager</h2>
+    <input id="taskTitle" placeholder="Task Title">
+    <textarea id="taskDesc" placeholder="Task Description"></textarea>
+    <button id="addTaskBtn">Add Task</button>
+    <h3>Tasks:</h3>
+    <div id="taskContainer"></div>
+    <h3>Stats:</h3>
+    <div id="stats"></div>
+</section>
+
+<script>
+// ---------- Layer Navigation ----------
+function showLayer(num){
+    for(let i=1;i<=4;i++){
+        document.getElementById(`layer${i}`).classList.remove("active");
+    }
+    document.getElementById(`layer${num}`).classList.add("active");
+}
+showLayer(1); // show first layer initially
+
+// ---------- Layer 1: Memory Game ----------
+const memoryGrid = document.getElementById("memoryGrid");
+const memoryMessage = document.getElementById("memoryMessage");
+let cards = ['A','B','C','D','E','F','G','H'];
+let memoryArray = [...cards,...cards]; // duplicate for pairs
+let firstCard=null, secondCard=null, lock=false;
+
+// Shuffle function using array methods
+memoryArray.sort(()=>Math.random()-0.5);
+
+memoryArray.forEach((symbol,index)=>{
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.dataset.symbol = symbol;
+    card.addEventListener("click",()=>flipCard(card));
+    memoryGrid.appendChild(card);
+});
+
+function flipCard(card){
+    if(lock || card.classList.contains("flipped") || card.classList.contains("matched")) return;
+    card.classList.add("flipped");
+    card.textContent = card.dataset.symbol;
+    if(!firstCard) firstCard = card;
+    else{
+        secondCard = card;
+        lock=true;
+        setTimeout(checkMatch,500);
+    }
+}
+
+function checkMatch(){
+    if(firstCard.dataset.symbol===secondCard.dataset.symbol){
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+        memoryMessage.textContent = "Matched!";
+    } else {
+        firstCard.classList.remove("flipped");
+        secondCard.classList.remove("flipped");
+        firstCard.textContent = "";
+        secondCard.textContent = "";
+        memoryMessage.textContent = "Try Again!";
+    }
+    firstCard=null; secondCard=null; lock=false;
+}
+
+// ---------- Layer 2: Math Trainer ----------
+const mathQuestion = document.getElementById("mathQuestion");
+const mathAnswer = document.getElementById("mathAnswer");
+const mathMessage = document.getElementById("mathMessage");
+let current = {};
+
+function generateQuestion(){
+    const a=Math.floor(Math.random()*20)+1;
+    const b=Math.floor(Math.random()*20)+1;
+    const ops = ['+','-','*'];
+    const op = ops[Math.floor(Math.random()*ops.length)];
+    current={a,b,op};
+    mathQuestion.textContent = `Solve: ${a} ${op} ${b}`;
+}
+generateQuestion();
+
+document.getElementById("submitMath").addEventListener("click",()=>{
+    const {a,b,op} = current;
+    const userAns = Number(mathAnswer.value);
+    let correctAns;
+    switch(op){case '+': correctAns=a+b; break; case '-': correctAns=a-b; break; case '*': correctAns=a*b; break;}
+    if(userAns===correctAns){
+        mathMessage.textContent="Correct!";
+    } else { mathMessage.textContent=`Wrong! Correct Answer: ${correctAns}`; }
+    mathAnswer.value="";
+    generateQuestion();
+});
+
+// ---------- Layer 3: Data Explorer ----------
+const generateData = document.getElementById("generateData");
+const dataOutput = document.getElementById("dataOutput");
+
+generateData.addEventListener("click",()=>{
+    // Using Map, Set, Array methods
+    const data = new Map();
+    const categories = ['Tech','Science','Math','Art'];
+    for(let i=1;i<=5;i++){
+        const cat = categories[Math.floor(Math.random()*categories.length)];
+        data.set(`Item ${i}`, cat);
+    }
+    const uniqueCats = new Set([...data.values()]);
+    let out = "";
+    for(const [item,cat] of data) out += `${item} -> ${cat}\n`;
+    out += `Unique Categories: ${[...uniqueCats].join(", ")}`;
+    dataOutput.textContent = out;
+});
+
+// ---------- Layer 4: Mini Task Manager ----------
+const tasks = new Map();
+const taskContainer = document.getElementById("taskContainer");
+
+const addTask = (id, {title="No Title", description="No Description", status="pending"}={})=>{
+    tasks.set(id, {title, description, status});
+};
+
+const displayTasks = ()=>{
+    taskContainer.innerHTML="";
+    for(const [id,{title,description,status}] of tasks){
+        taskContainer.innerHTML += `
+            <div class="task ${status}">
+                <span>${title} (${status})</span>
+                <div>
+                    <button class="small" onclick="toggleStatus(${id})">Toggle</button>
+                    <button class="small" onclick="deleteTask(${id})">Delete</button>
+                </div>
+            </div>`;
+    }
+    updateStats();
+};
+
+const toggleStatus = id=>{
+    if(tasks.has(id)){
+        const task = tasks.get(id);
+        tasks.set(id,{...task,status:task.status==="pending"?"completed":"pending"});
+        displayTasks();
+    }
+};
+
+const deleteTask = id=>{
+    tasks.delete(id);
+    displayTasks();
+};
+
+const updateStats = ()=>{
+    const allTasks = [...tasks.values()];
+    const total = allTasks.length;
+    const completed = allTasks.filter(({status})=>status==="completed").length;
+    const pending = total-completed;
+    document.getElementById("stats").innerHTML=`Total: ${total}, Completed: ${completed}, Pending: ${pending}`;
+};
+
+document.getElementById("addTaskBtn").addEventListener("click", ()=>{
+    const title = document.getElementById("taskTitle").value;
+    const desc = document.getElementById("taskDesc").value;
+    const id = tasks.size+1;
+    addTask(id,{title,description:desc});
+    displayTasks();
+    document.getElementById("taskTitle").value="";
+    document.getElementById("taskDesc").value="";
+});
+</script>
+
+</body>
+</html>
