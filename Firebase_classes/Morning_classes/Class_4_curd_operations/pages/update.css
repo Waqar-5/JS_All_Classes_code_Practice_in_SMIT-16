@@ -1,0 +1,106 @@
+
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Body styling */
+    body {
+      background-color: #f5f7fa;  /* Light background */
+      display: flex;
+      flex-direction: column;
+      align-items: center;       /* Center content horizontally */
+      padding: 40px 20px;
+      color: #333;
+      min-height: 100vh;         /* Full height */
+    }
+
+    /* Page heading */
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #2d3436;
+      text-align: center;
+    }
+
+    /* Input fields styling */
+    input[type="text"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #dfe6e9;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    /* Focus effect for input */
+    input[type="text"]:focus {
+      border-color: #6c5ce7;
+    }
+
+    /* Buttons styling */
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    /* Update button specific style */
+    #updateBtn {
+      background-color: #6c5ce7;  /* Purple */
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    #updateBtn:hover {
+      background-color: #a29bfe;
+      transform: translateY(-2px);
+    }
+
+    /* Back button specific style */
+    #backBtn {
+      background-color: #b2bec3;  /* Gray */
+      color: #2d3436;
+      margin-bottom: 30px;
+    }
+
+    #backBtn:hover {
+      background-color: #636e72;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Output message area */
+    pre#out {
+      background-color: #dfe6e9; /* Light gray */
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 100%;
+      overflow-x: auto;          /* Handle long text */
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      input[type="text"], button, pre#out {
+        width: 90%;             /* Adjust width for small screens */
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+  

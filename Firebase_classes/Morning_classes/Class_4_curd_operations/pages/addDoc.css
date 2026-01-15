@@ -1,0 +1,135 @@
+Reset browser defaults
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6c5ce7, #00cec9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Card */
+.container {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+
+
+/* Heading */
+h1 {
+  color: #2d3436;
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+}
+
+/* Input field */
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #dfe6e9;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #6c5ce7;
+}
+
+/* Add Button */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #6c5ce7;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5945d7;
+  transform: translateY(-1px);
+}
+
+/* Output message */
+pre {
+  margin-top: 20px;
+  background: #f1f2f6;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #2d3436;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+
+/* Back button */
+#backBtn {
+  display: inline-block;
+  margin-top: 25px;
+  text-decoration: none;
+  color: #6c5ce7;
+  font-weight: 600;
+  padding: 10px 15px;
+  border: 2px solid #6c5ce7;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#backBtn:hover {
+  background-color: #6c5ce7;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 25px 20px;
+    border-radius: 14px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  pre {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes page responsive for mobile and desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./addDoc.css">
+
+  <!-- Page title -->
+  <title>Add Auto ID</title>
+</head>
+<body>
+
+ <div class="container">
+
+     <!-- Page heading -->
+  <h1>Add Document with Auto ID</h1>
+
+  <!-- Input field where user types data -->
+  <input type="text" id="docValue" placeholder="Value">
+
+  <!-- Button that triggers Firestore add -->
+  <button id="addAutoBtn">Add (auto ID)</button>
+
+  <!-- Area to display success or error messages -->
+  <pre id="out"></pre>
+
+  <!-- Back button to return to dashboard -->
+  <a href="../index.html" id="backBtn">← Back to Dashboard</a>
+
+ </div>
+
+</body>
+
+<!-- Load JavaScript file using ES Module -->
+<script type="module" src="./addDoc.js"></script>
+</html>

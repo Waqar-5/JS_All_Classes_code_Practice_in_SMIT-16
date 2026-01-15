@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup and login page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+<div class="mainDev">
+    <!-- Signup -->
+    <div class="signup">
+        <div class="inputs">
+            <h1 class="form-title">Sign Up</h1>
+            <label>Email</label>
+            <input type="email" id="semail" placeholder="Enter your email">
+            <label>Password</label>
+            <input type="password" id="spassword" placeholder="Enter your password">
+            <button id="signUp">Sign Up</button>
+            <p class="signup-text">Already have an account? <a href="#" id="goToLogin">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <div class="login" style="display:none;">
+        <div class="inputs">
+            <h1 class="form-title">Login</h1>
+            <label>Email</label>
+            <input type="email" id="lemail" placeholder="Enter your email">
+            <label>Password</label>
+            <input type="password" id="lpassword" placeholder="Enter your password">
+            <button id="login">Login</button>
+            <p class="signup-text">Don't have an account? <a href="#" id="goToSignup">Sign Up</a></p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="./app.js"></script>
+
+</html>

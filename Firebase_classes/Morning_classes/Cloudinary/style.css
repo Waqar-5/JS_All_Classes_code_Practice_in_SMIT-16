@@ -1,0 +1,105 @@
+/* === Global Styles === */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FF9800, #F44336);
+      color: #333;
+    }
+
+    /* === Upload Box Card === */
+    .upload-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 400px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .upload-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #FF5722;
+    }
+
+    /* === File Input === */
+    input[type="file"] {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: 2px dashed #FF9800;
+      border-radius: 15px;
+      background: #fff7f0;
+      cursor: pointer;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    input[type="file"]:hover {
+      border-color: #F44336;
+      background: #fff0f0;
+    }
+
+    /* === Upload Button === */
+    button {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #FF5722, #FF9800);
+      border: none;
+      padding: 12px 25px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255,87,34,0.5);
+    }
+
+    /* === Preview Image === */
+    img {
+      margin-top: 25px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    /* === Responsive === */
+    @media (max-width: 480px) {
+      .upload-box {
+        width: 90%;
+        padding: 25px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  
