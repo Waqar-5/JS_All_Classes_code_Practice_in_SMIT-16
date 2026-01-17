@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse - Signup</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="glass">
+    <h2>Create Account</h2>
+    <input id="name" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="signup()">Sign Up</button>
+    <div class="link" onclick="location.href='index.html'">Already have an account?</div>
+  </div>
+</div>
+
+<script type="module">
+import { signup as doSignup } from "./js/auth.js";
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+
+window.signup = () => doSignup(nameInput.value, emailInput.value, passwordInput.value);
+</script>
+
+</body>
+</html>

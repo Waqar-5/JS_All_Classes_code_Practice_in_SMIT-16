@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse - Feed</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+<body>
+
+<div class="nav">
+  <h3>Pulse</h3>
+  <span onclick="location.href='profile.html'">👤</span>
+  <button id="logoutBtn">Logout</button>
+</div>
+
+<div class="container">
+  <div class="glass postBox">
+    <textarea id="postText" placeholder="What's on your mind?"></textarea>
+    <button id="postBtn">Post</button>
+  </div>
+
+  <div id="feed"></div>
+</div>
+
+<script type="module">
+// import { auth } from "./js/firebase.js";
+// import { createPost } from "./js/post.js";
+// import { loadFeed } from "./js/feed.js";
+// import { logout } from "./js/auth.js";
+
+// // Protect page: redirect if not logged in
+// auth.onAuthStateChanged(user => {
+//   if(!user) location.href = "index.html";
+// });
+
+// // Post button
+// const postText = document.getElementById("postText");
+// const postBtn = document.getElementById("postBtn");
+
+// postBtn.addEventListener("click", async () => {
+//   if(postText.value.trim() === "") return;
+//   await createPost(postText.value);
+//   postText.value = "";
+// });
+
+// // Load feed
+// loadFeed();
+
+// // Logout button
+// document.getElementById("logoutBtn").addEventListener("click", logout);
+
+
+import { auth } from "./js/firebase.js";
+import { loadFeed } from "./js/feed.js";
+import { logout } from "./js/auth.js";
+
+auth.onAuthStateChanged(user => {
+  if (!user) location.href = "index.html";
+});
+
+loadFeed();
+
+document.getElementById("logoutBtn").addEventListener("click", logout);
+
+</script>
+</body>
+</html>

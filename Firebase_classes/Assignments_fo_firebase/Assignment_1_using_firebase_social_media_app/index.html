@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse - Login</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="glass">
+    <h1>Pulse</h1>
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button style="background:#fff;color:#333" onclick="googleLogin()">Login with Google</button>
+    <div class="link" onclick="location.href='signup.html'">Create account</div>
+  </div>
+</div>
+
+<script type="module">
+import { login as doLogin, googleLogin as doGoogleLogin } from "./js/auth.js";
+
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+
+window.login = () => doLogin(emailInput.value, passwordInput.value);
+window.googleLogin = doGoogleLogin;
+</script>
+</body>
+</html>
+
+
+<!-- hdsyhvxc -->
