@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="app">
+  
+        <header class="header">
+            <h1>My Tasks</h1>
+            <div class="user-info">
+              <span id="welcome">Welcome, User!</span>
+              <button class="logout" onclick="logout()">Logout</button>
+            </div>
+          </header>
+          
+  
+      <div class="card add-todo">
+        <input id="todoText" placeholder="What needs to be done?" />
+        <div class="row">
+          <input type="date" id="dueDate">
+          <select id="priority">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+          <select id="category">
+            <option>Personal</option>
+            <option>Work</option>
+            <option>Study</option>
+          </select>
+        </div>
+        <button class="add-btn" onclick="addTodo()">Add Task</button>
+      </div>
+  
+      <input id="search" class="search" placeholder="Search tasks..." oninput="filterTodos()">
+  
+      <ul id="todoList" class="todo-list"></ul>
+  
+    </div>
+ 
+  
+<script type="module" src="app.js"></script>
+</body>
+</html>
