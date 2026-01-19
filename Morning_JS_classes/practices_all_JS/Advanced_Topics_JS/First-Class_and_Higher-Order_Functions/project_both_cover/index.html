@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCF + HOF Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Dynamic Calculator</h1>
+        <div class="inputs">
+            <input type="number" id="num1" placeholder="Enter first number">
+            <input type="number" id="num2" placeholder="Enter second number">
+        </div>
+        <div class="operations">
+            <button data-op="add">Add</button>
+            <button data-op="subtract">Subtract</button>
+            <button data-op="multiply">Multiply</button>
+            <button data-op="divide">Divide</button>
+            <button data-op="power">Power</button>
+        </div>
+        <div class="result">
+            <h2>Result: <span id="resultValue">0</span></h2>
+        </div>
+        <div class="concepts">
+            <h3>Concepts Used:</h3>
+            <p id="conceptValue">---</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

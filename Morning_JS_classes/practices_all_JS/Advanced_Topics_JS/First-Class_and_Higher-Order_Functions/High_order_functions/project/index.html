@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOF Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>⚡ HOF Playground</h1>
+        <p>Learn Higher-Order Functions interactively!</p>
+    </header>
+
+    <main class="container">
+        <!-- Card 1: Function as Argument -->
+        <div class="card">
+            <h2>1️⃣ Function as Argument</h2>
+            <p>Pass a function as an argument to a Higher-Order Function.</p>
+            <button id="callbackBtn">Run Example</button>
+            <p class="output" id="callbackOutput">---</p>
+        </div>
+
+        <!-- Card 2: Function Returned -->
+        <div class="card">
+            <h2>2️⃣ Function Returned</h2>
+            <p>A function returns another function dynamically.</p>
+            <button id="returnBtn">Run Example</button>
+            <p class="output" id="returnOutput">---</p>
+        </div>
+
+        <!-- Card 3: Array HOFs -->
+        <div class="card">
+            <h2>3️⃣ Array Methods (map, filter, reduce)</h2>
+            <p>Use built-in HOFs with arrays to transform, filter, and reduce data.</p>
+            <button id="arrayBtn">Run Example</button>
+            <p class="output" id="arrayOutput">---</p>
+        </div>
+
+        <!-- Card 4: Dynamic Operations -->
+        <div class="card">
+            <h2>4️⃣ Dynamic Operations</h2>
+            <p>HOF that returns different functions based on input.</p>
+            <button id="dynamicBtn">Run Example</button>
+            <p class="output" id="dynamicOutput">---</p>
+        </div>
+
+        <!-- Card 5: Repeat Action -->
+        <div class="card">
+            <h2>5️⃣ Repeat Action</h2>
+            <p>Run a callback multiple times dynamically.</p>
+            <button id="repeatBtn">Run Example</button>
+            <p class="output" id="repeatOutput">---</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>💡 Built to teach HOF concepts interactively</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

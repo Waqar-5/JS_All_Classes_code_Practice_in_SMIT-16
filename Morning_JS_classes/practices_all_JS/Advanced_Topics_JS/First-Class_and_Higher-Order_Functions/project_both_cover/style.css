@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator-container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 350px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.inputs input {
+    width: 45%;
+    padding: 10px;
+    margin: 10px 2%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.operations button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6a11cb;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.operations button:hover {
+    background-color: #2575fc;
+}
+
+.result, .concepts {
+    margin-top: 20px;
+}
+
+#conceptValue {
+    font-weight: bold;
+    color: #6a11cb;
+}
