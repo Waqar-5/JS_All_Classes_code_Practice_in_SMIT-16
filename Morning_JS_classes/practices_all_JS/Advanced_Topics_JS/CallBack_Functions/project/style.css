@@ -1,0 +1,98 @@
+/* ===========================
+   Global body styles
+   =========================== */
+body {
+  font-family: Arial, sans-serif; /* Set font for entire page */
+  background-color: #fefefe;       /* Light background color */
+  display: flex;                   /* Use Flexbox for centering */
+  justify-content: center;         /* Center horizontally */
+  align-items: center;             /* Center vertically */
+  min-height: 100vh;               /* Make body take full viewport height */
+}
+
+/* ===========================
+   Container for the recipe app
+   =========================== */
+.container {
+  background-color: #fff;                  /* White background */
+  padding: 30px;                           /* Inner spacing */
+  border-radius: 12px;                     /* Rounded corners */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* Soft shadow for 3D effect */
+  width: 450px;                            /* Fixed width */
+  text-align: center;                       /* Center all text inside */
+}
+
+/* ===========================
+   Heading styles
+   =========================== */
+h1 {
+  margin-bottom: 20px; /* Space below heading */
+  color: #333;         /* Dark gray color for text */
+}
+
+/* ===========================
+   Input field styles
+   =========================== */
+input {
+  width: 80%;                  /* Input field width */
+  padding: 10px;               /* Inner padding */
+  margin-bottom: 10px;         /* Space below input */
+  border-radius: 6px;          /* Rounded corners */
+  border: 1px solid #ccc;      /* Light gray border */
+  display: block;              /* Block element to allow margin auto */
+  margin-left: auto;           /* Center horizontally */
+  margin-right: auto;          /* Center horizontally */
+}
+
+/* ===========================
+   Button styles (Start & Restart)
+   =========================== */
+button {
+  width: 80%;                  /* Match input field width */
+  padding: 10px;               /* Inner spacing */
+  margin: 10px auto;           /* Center button and add vertical spacing */
+  border-radius: 6px;          /* Rounded corners */
+  border: none;                /* Remove default border */
+  background-color: #ff5722;   /* Orange color for Start button */
+  color: #fff;                 /* White text */
+  font-size: 16px;             /* Text size */
+  cursor: pointer;             /* Pointer on hover */
+  display: block;              /* Needed for margin auto centering */
+}
+
+/* Change button color on hover */
+button:hover {
+  background-color: #e64a19; /* Darker orange when hovered */
+}
+
+/* ===========================
+   Restart button specific styles
+   =========================== */
+#restartBtn {
+  background-color: #607d8b; /* Grayish-blue color */
+}
+
+#restartBtn:hover {
+  background-color: #455a64; /* Darker grayish-blue on hover */
+}
+
+/* ===========================
+   Recipe steps list
+   =========================== */
+ul {
+  list-style: none;   /* Remove bullets */
+  padding: 0;         /* Remove default padding */
+  margin-top: 20px;   /* Space above the list */
+  text-align: left;   /* Align text to the left */
+}
+
+/* ===========================
+   Individual step item styles
+   =========================== */
+li {
+  background-color: #eee;            /* Light gray background for each step */
+  margin: 5px 0;                     /* Space between steps */
+  padding: 10px;                      /* Inner spacing */
+  border-radius: 6px;                /* Rounded corners for step boxes */
+  transition: background-color 0.3s; /* Smooth color change for completion */
+}
