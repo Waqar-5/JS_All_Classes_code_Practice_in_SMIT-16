@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Closures Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JS Closures Playground</h1>
+        <p>Learn closures with interactive examples!</p>
+    </header>
+
+    <main>
+        <!-- Counter Example -->
+        <section class="example">
+            <h2>Private Counter Example</h2>
+            <p>Click the button to increase the counter. Closure keeps the value private!</p>
+            <button id="counterBtn">Increase Counter</button>
+            <p>Counter Value: <span id="counterValue">0</span></p>
+        </section>
+
+        <!-- Multiplier Example -->
+        <section class="example">
+            <h2>Multiplier Function Factory</h2>
+            <p>Enter a factor and a number to see multiplication using closures:</p>
+            <input type="number" id="factorInput" placeholder="Factor">
+            <input type="number" id="numberInput" placeholder="Number">
+            <button id="multiplyBtn">Multiply</button>
+            <p>Result: <span id="multiplyResult">0</span></p>
+        </section>
+
+        <!-- Memoization Example -->
+        <section class="example">
+            <h2>Memoized Square Function</h2>
+            <p>Enter a number to calculate its square (memoized):</p>
+            <input type="number" id="memoInput" placeholder="Number">
+            <button id="memoBtn">Calculate</button>
+            <p>Result: <span id="memoResult">0</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ by Waqar Ali | JavaScript Closure Examples</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
