@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Team Scoreboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scoreboard">
+    <h1>Team Scoreboard</h1>
+
+    <div class="team">
+      <h2>Team A: <span id="scoreA">0</span></h2>
+      <input type="number" id="pointsA" placeholder="Points to add">
+      <select id="typeA">
+        <option value="normal">Normal</option>
+        <option value="bonus">Bonus (+2x)</option>
+        <option value="penalty">Penalty (-)</option>
+      </select>
+      <button onclick="addPoints('A')">Add Points</button>
+    </div>
+
+    <div class="team">
+      <h2>Team B: <span id="scoreB">0</span></h2>
+      <input type="number" id="pointsB" placeholder="Points to add">
+      <select id="typeB">
+        <option value="normal">Normal</option>
+        <option value="bonus">Bonus (+2x)</option>
+        <option value="penalty">Penalty (-)</option>
+      </select>
+      <button onclick="addPoints('B')">Add Points</button>
+    </div>
+
+    <h3>Total Score: <span id="totalScore">0</span></h3>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

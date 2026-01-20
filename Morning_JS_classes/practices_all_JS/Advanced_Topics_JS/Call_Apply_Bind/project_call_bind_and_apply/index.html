@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Function Wizard - Call, Apply, Bind</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#a1c4fd,#c2e9fb);
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #4f46e5;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.8em;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+nav button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #4f46e5;
+    color: white;
+    transition: 0.3s;
+}
+nav button:hover { background-color: #6d5dfc; }
+section {
+    display: none;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+section.active { display: block; }
+h2 { color: #4f46e5; }
+label, select, input, button { display: block; margin: 10px 0; font-size: 1em; }
+button.action { background-color: #f97316; color: white; border-radius: 8px; padding: 10px; cursor: pointer; }
+button.action:hover { background-color: #fb923c; }
+.output { margin-top: 15px; font-weight: bold; color: #111827; }
+</style>
+</head>
+<body>
+
+<header>Function Wizard 🔮 – Call, Apply & Bind Simulator</header>
+
+<nav>
+    <button onclick="showSection('callSection')">Call</button>
+    <button onclick="showSection('applySection')">Apply</button>
+    <button onclick="showSection('bindSection')">Bind</button>
+</nav>
+
+<!-- Call Section -->
+<section id="callSection" class="active">
+    <h2>Call Simulator</h2>
+    <p>Choose a hero and an action to see how <strong>call()</strong> works:</p>
+    <label for="callHero">Hero:</label>
+    <select id="callHero">
+        <option value="Flash">Flash</option>
+        <option value="Superman">Superman</option>
+    </select>
+    <label for="callAction">Action:</label>
+    <select id="callAction">
+        <option value="run">Run Fast</option>
+        <option value="fly">Fly</option>
+    </select>
+    <button class="action" onclick="performCall()">Perform Action</button>
+    <div class="output" id="callOutput">Result will appear here...</div>
+</section>
+
+<!-- Apply Section -->
+<section id="applySection">
+    <h2>Apply Simulator</h2>
+    <p>Choose hero and pass actions as an array to see <strong>apply()</strong>:</p>
+    <label for="applyHero">Hero:</label>
+    <select id="applyHero">
+        <option value="Wonder Woman">Wonder Woman</option>
+        <option value="Batman">Batman</option>
+    </select>
+    <label for="applyActions">Actions (comma separated):</label>
+    <input id="applyActions" placeholder="run,fly,fight" />
+    <button class="action" onclick="performApply()">Perform Actions</button>
+    <div class="output" id="applyOutput">Result will appear here...</div>
+</section>
+
+<!-- Bind Section -->
+<section id="bindSection">
+    <h2>Bind Simulator</h2>
+    <p>Assign tasks permanently to heroes using <strong>bind()</strong>:</p>
+    <label for="bindHero">Hero:</label>
+    <select id="bindHero">
+        <option value="Iron Man">Iron Man</option>
+        <option value="Hulk">Hulk</option>
+    </select>
+    <label for="bindTask">Task:</label>
+    <select id="bindTask">
+        <option value="protect">Protect City</option>
+        <option value="train">Training</option>
+    </select>
+    <button class="action" onclick="performBind()">Assign Task</button>
+    <div class="output" id="bindOutput">Result will appear here...</div>
+</section>
+
+<script>
+// Show only selected section
+function showSection(id) {
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+// Heroes objects
+const heroes = {
+    Flash: { name: "Flash", power: "super speed" },
+    Superman: { name: "Superman", power: "super strength" },
+    "Wonder Woman": { name: "Wonder Woman", power: "combat skill" },
+    Batman: { name: "Batman", power: "gadgets" },
+    "Iron Man": { name: "Iron Man", power: "technology" },
+    Hulk: { name: "Hulk", power: "incredible strength" }
+};
+
+// Generic function to perform an action
+function actionFunction(action1, action2) {
+    return `${this.name} uses ${this.power} to ${action1}${action2 ? " and " + action2 : ""}!`;
+}
+
+// === Call Simulator ===
+function performCall() {
+    const hero = document.getElementById("callHero").value;
+    const action = document.getElementById("callAction").value;
+    // call() executes immediately, arguments comma-separated
+    const result = actionFunction.call(heroes[hero], action);
+    document.getElementById("callOutput").textContent = result;
+}
+
+// === Apply Simulator ===
+function performApply() {
+    const hero = document.getElementById("applyHero").value;
+    const actions = document.getElementById("applyActions").value.split(",").map(a=>a.trim());
+    // apply() executes immediately, arguments as array
+    const result = actionFunction.apply(heroes[hero], actions);
+    document.getElementById("applyOutput").textContent = result;
+}
+
+// === Bind Simulator ===
+function performBind() {
+    const hero = document.getElementById("bindHero").value;
+    const task = document.getElementById("bindTask").value;
+    // bind() creates a new function permanently bound to hero
+    const boundFunction = actionFunction.bind(heroes[hero], task);
+    // Call bound function later
+    const result = boundFunction();
+    document.getElementById("bindOutput").textContent = result;
+}
+</script>
+
+</body>
+</html>

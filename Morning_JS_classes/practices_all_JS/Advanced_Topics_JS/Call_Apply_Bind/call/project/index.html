@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superhero Action Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Superhero Action Simulator 🦸‍♀️</h1>
+
+    <div class="controls">
+      <label for="character">Choose Character:</label>
+      <select id="character">
+        <option value="hero1">Flash</option>
+        <option value="hero2">Superman</option>
+        <option value="hero3">Wonder Woman</option>
+      </select>
+
+      <label for="action">Choose Action:</label>
+      <select id="action">
+        <option value="run">Run Fast</option>
+        <option value="fly">Fly</option>
+        <option value="fight">Fight</option>
+      </select>
+
+      <button id="perform">Perform Action</button>
+    </div>
+
+    <div class="output">
+      <h2>Action Result:</h2>
+      <p id="result">Select a hero and an action to see the result.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

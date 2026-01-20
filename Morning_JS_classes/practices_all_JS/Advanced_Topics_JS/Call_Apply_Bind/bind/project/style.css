@@ -1,0 +1,52 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #caffbf, #9bf6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 30px;
+}
+
+.users button {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.users button:hover {
+  background-color: #ff6f91;
+}
+
+.products input {
+  width: 80%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.output {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
