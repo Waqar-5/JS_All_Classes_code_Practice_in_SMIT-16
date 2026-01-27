@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Employee Dashboard</title>
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Employee Management Dashboard</h1>
+      <p>Track, manage, and grow your team efficiently</p>
+    </header>
+
+    <!-- Employee form -->
+    <form id="employeeForm">
+      <input type="text" id="name" placeholder="Employee Name" required>
+      <input type="text" id="position" placeholder="Position" required>
+      <input type="number" id="salary" placeholder="Salary" required>
+      <button type="submit"><i class="fa-solid fa-plus"></i> Add Employee</button>
+    </form>
+
+    <!-- Employee cards container -->
+    <div id="employeeList" class="employee-list"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
