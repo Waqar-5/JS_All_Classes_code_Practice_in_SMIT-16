@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Inventory Dashboard</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Product Inventory Dashboard</h1>
+      <p>Manage products dynamically using Objects & Properties</p>
+    </header>
+
+    <!-- Add Product Form -->
+    <form id="productForm">
+      <input type="text" id="name" placeholder="Product Name" required>
+      <input type="text" id="category" placeholder="Category" required>
+      <input type="number" id="price" placeholder="Price" required>
+      <input type="number" id="stock" placeholder="Stock Quantity" required>
+      <button type="submit"><i class="fa-solid fa-plus"></i> Add Product</button>
+    </form>
+
+    <!-- Filter & Sort -->
+    <div class="filter-sort">
+      <input type="text" id="search" placeholder="Search by name or category">
+      <select id="sort">
+        <option value="">Sort By</option>
+        <option value="priceAsc">Price: Low → High</option>
+        <option value="priceDesc">Price: High → Low</option>
+        <option value="ratingDesc">Rating: High → Low</option>
+      </select>
+    </div>
+
+    <!-- Product Cards -->
+    <div id="productList" class="product-list"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
